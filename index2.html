@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio X - AI-Enhanced Cinematic Video</title>
+    <meta name="description"
+        content="Studio X turns your brand story into scroll-stopping films, YouTube content, explainers, and AI avatar videos — all crafted by our AI engine Studio X.">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="sdsc.css">
+</head>
+
+<body>
+
+    <!-- Main Video Background (Abstract Tech/AI) -->
+    <video id="bg-video" autoplay muted loop playsinline>
+        <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark glass-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="#">
+                <span class="text-gradient">STUDIO X</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#antigravity">Studio X Engine</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#use-cases">Use Cases</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary btn-sm px-4" href="#contact">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-vh-100 d-flex align-items-center position-relative">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10 col-xl-9">
+                    <div class="hero-content" data-aos="fade-up">
+                        <p class="small-label mb-3">
+                            AI-ENHANCED CINEMATIC VIDEO FOR BRANDS
+                        </p>
+                        <h1 class="display-1 fw-bold mb-4 hero-title">
+                            Cinematic Videos Powered by <span class="text-gradient">Studio X</span>
+                        </h1>
+                        <p class="lead fs-4 mb-5 text-light-gray">
+                            Studio X turns your brand story into scroll-stopping films, YouTube content, explainers, and
+                            AI avatar videos — all crafted by our AI engine Studio X for performance, speed,
+                            and scale.
+                        </p>
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-4">
+                            <a href="#contact" class="btn btn-primary btn-lg px-5 py-3">
+                                <i class="bi bi-arrow-right me-2"></i>Get a Free Strategy Call
+                            </a>
+                            <a href="#portfolio" class="btn btn-outline-light btn-lg px-5 py-3">
+                                <i class="bi bi-play-circle me-2"></i>Watch Sample Films
+                            </a>
+                        </div>
+                        <p class="small text-muted">
+                            No obligation. Get ideas, concepts, and timelines for your next video in one call.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / Social Proof Section -->
+    <section id="trust" class="py-5 position-relative">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="small-label mb-3">
+                    TRUSTED, TESTED, PERFORMANCE-READY
+                </p>
+                <h2 class="display-4 fw-bold mb-4">
+                    Brands Use Studio X to Scale Their Video Content
+                </h2>
+                <p class="lead text-light-gray col-lg-8 mx-auto">
+                    From direct-to-consumer brands to SaaS, education, and creators — Studio X delivers videos that
+                    actually move metrics, not just look pretty.
+                </p>
+            </div>
+
+            <!-- Logo Marquee -->
+            <div class="marquee-container mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="marquee-content">
+                    <span class="logo-placeholder">GOOGLE</span>
+                    <span class="logo-placeholder">AMAZON</span>
+                    <span class="logo-placeholder">SHOPIFY</span>
+                    <span class="logo-placeholder">HUBSPOT</span>
+                    <span class="logo-placeholder">NOTION</span>
+                    <span class="logo-placeholder">GOOGLE</span>
+                    <span class="logo-placeholder">AMAZON</span>
+                    <span class="logo-placeholder">SHOPIFY</span>
+                    <span class="logo-placeholder">HUBSPOT</span>
+                    <span class="logo-placeholder">NOTION</span>
+                </div>
+            </div>
+
+            <p class="text-center text-light-gray" data-aos="fade-up" data-aos-delay="200">
+                50+ brands and creators have already created AI-enhanced video with Studio X.
+            </p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-6 position-relative">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="small-label mb-3">
+                    WORKFLOW BUILT FOR SPEED
+                </p>
+                <h2 class="display-4 fw-bold mb-4">
+                    From Idea to Published Video in 4 Simple Steps
+                </h2>
+            </div>
+
+            <div class="row g-4">
+                <!-- Step 1 -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/3196344/3196344-hd_1920_1080_25fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="step-number">01</div>
+                            <h3 class="h2 fw-bold mb-3">Discover</h3>
+                            <p class="text-primary fw-semibold mb-3">Tell us your goals.</p>
+                            <p class="text-light-gray mb-0">
+                                We understand your brand, audience, and the outcome you want — awareness, sales,
+                                education, or engagement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/3130284/3130284-hd_1920_1080_30fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="step-number">02</div>
+                            <h3 class="h2 fw-bold mb-3">Script & Concept</h3>
+                            <p class="text-primary fw-semibold mb-3">Studio X gets to work.</p>
+                            <p class="text-light-gray mb-0">
+                                Our AI + creative team generates hooks, scripts, storyboards, and visual direction
+                                tailored to your brand.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/4443688/4443688-hd_1920_1080_25fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="step-number">03</div>
+                            <h3 class="h2 fw-bold mb-3">Production & Edit</h3>
+                            <p class="text-primary fw-semibold mb-3">Cinematic polish, AI-enhanced.</p>
+                            <p class="text-light-gray mb-0">
+                                We blend AI video, avatars, motion graphics, voiceover, and music into a finished
+                                cinematic piece.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/3130182/3130182-hd_1920_1080_30fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="step-number">04</div>
+                            <h3 class="h2 fw-bold mb-3">Delivery & Scale</h3>
+                            <p class="text-primary fw-semibold mb-3">You get all formats you need.</p>
+                            <p class="text-light-gray mb-0">
+                                We deliver exports for YouTube, Reels, Shorts, Ads, Website, and internal use — ready to
+                                publish.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio X Feature Section -->
+    <section id="antigravity" class="py-6 position-relative">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="small-label mb-3">
+                    MEET THE ENGINE BEHIND THE MAGIC
+                </p>
+                <h2 class="display-4 fw-bold mb-4">
+                    What <span class="text-gradient">Studio X</span> Brings to Your Videos
+                </h2>
+                <p class="lead text-light-gray col-lg-8 mx-auto">
+                    Studio X is your AI video intelligence layer — built to plan, write, and optimize
+                    high-converting video content.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Feature 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="feature-icon">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">AI Story Intelligence</h4>
+                            <p class="text-light-gray mb-0">
+                                Turn product details, web pages, or briefs into ready-to-shoot concepts, hooks, and
+                                scripts in minutes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/3129957/3129957-hd_1920_1080_25fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="feature-icon">
+                                <i class="bi bi-palette"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Dynamic Visual Direction</h4>
+                            <p class="text-light-gray mb-0">
+                                Generate moodboards, shot styles, transitions, and visual cues for your videos — from
+                                cinematic to hyper-social.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/5473806/5473806-hd_1920_1080_30fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="feature-icon">
+                                <i class="bi bi-pencil-square"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">AI-Assisted Scriptwriting</h4>
+                            <p class="text-light-gray mb-0">
+                                Multiple hook variations, A/B testable intros, and tightly structured scripts optimized
+                                for retention.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/8466636/8466636-hd_1920_1080_25fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="feature-icon">
+                                <i class="bi bi-person-video3"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Avatar & Voice Integration</h4>
+                            <p class="text-light-gray mb-0">
+                                Seamless use of realistic AI avatars and natural voices across 60+ languages, with
+                                brand-consistent tone.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/4443688/4443688-hd_1920_1080_25fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="feature-icon">
+                                <i class="bi bi-aspect-ratio"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Multi-Format Delivery Logic</h4>
+                            <p class="text-light-gray mb-0">
+                                Studio X automatically plans cuts for vertical, horizontal, and square formats
+                                from the same master story.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/3130182/3130182-hd_1920_1080_30fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="feature-icon">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Performance-Ready Prompts</h4>
+                            <p class="text-light-gray mb-0">
+                                Prompt templates tuned for YouTube, ads, reels, explainer videos, and learning content —
+                                not generic AI fluff.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section (VIDEO CARDS) -->
+    <section id="use-cases" class="py-6 position-relative">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="small-label mb-3">
+                    WHO STUDIO X IS FOR
+                </p>
+                <h2 class="display-4 fw-bold mb-4">
+                    One Engine, Many Video Possibilities
+                </h2>
+                <p class="lead text-light-gray col-lg-8 mx-auto">
+                    Whether you're a creator, brand, or educator, Studio X helps you ship more video with less
+                    effort.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Use Case 1: Brand & Product -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/853800/853800-hd_1920_1080_25fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="mb-3">
+                                <i class="bi bi-film fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="h3 fw-bold mb-2">Brand & Product Films</h3>
+                            <p class="text-primary fw-semibold mb-2">Perfect for launches & campaigns.</p>
+                            <p class="text-light-gray mb-0">
+                                High-impact stories that explain your brand and product in under 90 seconds.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use Case 2: YouTube -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/3205916/3205916-hd_1920_1080_25fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="mb-3">
+                                <i class="bi bi-youtube fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="h3 fw-bold mb-2">YouTube & Content Creators</h3>
+                            <p class="text-primary fw-semibold mb-2">Hooks, scripts, thumbnails.</p>
+                            <p class="text-light-gray mb-0">
+                                Turn one idea into a complete content package: video, title, and thumbnail direction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use Case 3: Performance Ads -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/3130182/3130182-hd_1920_1080_30fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="mb-3">
+                                <i class="bi bi-megaphone fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="h3 fw-bold mb-2">Performance Ads</h3>
+                            <p class="text-primary fw-semibold mb-2">Short, punchy, conversion-focused.</p>
+                            <p class="text-light-gray mb-0">
+                                UGC-style videos, testimonials, and offer-focused creatives for paid campaigns.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use Case 4: Learning -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/5473806/5473806-hd_1920_1080_30fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="mb-3">
+                                <i class="bi bi-book fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="h3 fw-bold mb-2">Learning & Explainers</h3>
+                            <p class="text-primary fw-semibold mb-2">E-learning and corporate training.</p>
+                            <p class="text-light-gray mb-0">
+                                Break complex concepts into clear, structured, and visual learning modules.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use Case 5: AI Avatars -->
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="500">
+                    <div class="video-card h-100">
+                        <video class="video-card-bg" autoplay muted loop playsinline>
+                            <source src="https://videos.pexels.com/video-files/8466636/8466636-hd_1920_1080_25fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="video-card-content">
+                            <div class="mb-3">
+                                <i class="bi bi-robot fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="h3 fw-bold mb-2">AI Avatars & Virtual Hosts</h3>
+                            <p class="text-primary fw-semibold mb-2">When you need a face on camera, without a shoot.
+                            </p>
+                            <p class="text-light-gray mb-0">
+                                Multilingual AI presenters who can explain, teach, or sell at scale.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo / Showreel Section -->
+    <section id="portfolio" class="py-6 position-relative">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="small-label mb-3">
+                    SEE IT BEFORE YOU BOOK
+                </p>
+                <h2 class="display-4 fw-bold mb-4">
+                    Watch Studio X in Action
+                </h2>
+                <p class="lead text-light-gray col-lg-8 mx-auto">
+                    A quick look at how Studio X + our creative direction turns simple ideas into cinematic,
+                    high-performing videos.
+                </p>
+            </div>
+
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-10">
+                    <div class="demo-video-wrapper">
+                        <video class="w-100" autoplay muted loop playsinline style="display: block;">
+                            <source src="https://videos.pexels.com/video-files/3129957/3129957-hd_1920_1080_25fps.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div class="play-button">
+                            <i class="bi bi-play-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 g-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 text-center">
+                        <i class="bi bi-camera-reels fs-2 text-primary mb-3"></i>
+                        <p class="mb-0 text-light-gray">Brand film montage</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 text-center">
+                        <i class="bi bi-youtube fs-2 text-primary mb-3"></i>
+                        <p class="mb-0 text-light-gray">YouTube content snippets</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 text-center">
+                        <i class="bi bi-person-video2 fs-2 text-primary mb-3"></i>
+                        <p class="mb-0 text-light-gray">AI avatar clips</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="glass-card p-4 text-center">
+                        <i class="bi bi-mortarboard fs-2 text-primary mb-3"></i>
+                        <p class="mb-0 text-light-gray">Learning & explainer samples</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-6 position-relative">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="small-label mb-3">
+                    WHY TEAMS CHOOSE STUDIO X
+                </p>
+                <h2 class="display-4 fw-bold mb-4">
+                    More Video, Less Chaos
+                </h2>
+            </div>
+
+            <div class="row g-4">
+                <!-- Benefit 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card p-4 h-100 benefit-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Save Time & Budget</h4>
+                        <p class="text-light-gray mb-0">
+                            No need for large in-house teams, recurring shoots, and endless revisions. We handle concept
+                            to delivery.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-card p-4 h-100 benefit-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Predictable Quality</h4>
+                        <p class="text-light-gray mb-0">
+                            Every video goes through the same Studio X workflow plus human creative oversight
+                            for on-brand results.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-card p-4 h-100 benefit-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-layers"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Content at Scale</h4>
+                        <p class="text-light-gray mb-0">
+                            Plan monthly content drops, campaigns, or series instead of one-off projects.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass-card p-4 h-100 benefit-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Story + Strategy Combined</h4>
+                        <p class="text-light-gray mb-0">
+                            We don't just "make something cool" — we align each video with your funnel, metrics, and
+                            goals.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="glass-card p-4 h-100 benefit-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-rocket-takeoff"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Future-Proof Creation</h4>
+                        <p class="text-light-gray mb-0">
+                            AI-enhanced workflows that keep getting smarter, giving you a compounding advantage in
+                            content output.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-6 position-relative">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="small-label mb-3">
+                    FLEXIBLE PLANS FOR DIFFERENT STAGES
+                </p>
+                <h2 class="display-4 fw-bold mb-4">
+                    Pick the Way You Want to Work With Studio X
+                </h2>
+            </div>
+
+            <div class="row g-4">
+                <!-- Starter Pack -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card p-5 h-100 pricing-card">
+                        <h3 class="h4 fw-bold mb-2">Starter Pack</h3>
+                        <p class="text-primary mb-4">Best for: One-time project or test run</p>
+                        <div class="mb-4">
+                            <span class="display-5 fw-bold">$XXX</span>
+                        </div>
+                        <ul class="list-unstyled check-list mb-4">
+                            <li>1 cinematic brand or explainer video (up to 90 sec)</li>
+                            <li>Script, voiceover, edit, music, subtitles</li>
+                            <li>2 short cutdowns for Reels/Shorts</li>
+                            <li>2 rounds of revisions</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-light w-100">
+                            <i class="bi bi-arrow-right me-2"></i>Start with Starter Pack
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Growth Content Stack -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-card p-5 h-100 pricing-card popular">
+                        <div class="badge bg-primary mb-3">Most Popular</div>
+                        <h3 class="h4 fw-bold mb-2">Growth Content Stack</h3>
+                        <p class="text-primary mb-4">Best for: Active brands & creators</p>
+                        <div class="mb-4">
+                            <span class="display-5 fw-bold">$XXX</span>
+                            <span class="text-light-gray">/month</span>
+                        </div>
+                        <ul class="list-unstyled check-list mb-4">
+                            <li>4–6 videos per month (mix of brand, YouTube, ads, or explainers)</li>
+                            <li>Studio X-powered ideation & scripting</li>
+                            <li>Thumbnails + title suggestions (for YouTube)</li>
+                            <li>Vertical + horizontal exports</li>
+                            <li>Priority turnaround</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary w-100">
+                            <i class="bi bi-arrow-right me-2"></i>Talk to Us About Growth
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Custom / Enterprise -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-card p-5 h-100 pricing-card">
+                        <h3 class="h4 fw-bold mb-2">Custom / Enterprise</h3>
+                        <p class="text-primary mb-4">Best for: Agencies, teams, or learning organizations</p>
+                        <div class="mb-4">
+                            <span class="display-5 fw-bold">Custom</span>
+                        </div>
+                        <ul class="list-unstyled check-list mb-4">
+                            <li>High-volume video production</li>
+                            <li>Dedicated creative lead</li>
+                            <li>Custom workflows & integrations</li>
+                            <li>White-label options for agencies</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-light w-100">
+                            <i class="bi bi-arrow-right me-2"></i>Book a Custom Strategy Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-6 position-relative">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <p class="small-label mb-3">
+                    WHAT CLIENTS ARE SAYING
+                </p>
+                <h2 class="display-4 fw-bold mb-4">
+                    "Studio X Feels Like an Extension of Our Team"
+                </h2>
+            </div>
+
+            <div class="row g-4">
+                <!-- Testimonial 1 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card p-4 h-100">
+                        <div class="mb-4">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="text-light-gray mb-4">
+                            "Studio X helped us go from zero video to a full launch campaign in weeks. The scripts and
+                            visuals felt on-brand from day one."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://i.pravatar.cc/60?img=1" alt="Client"
+                                class="rounded-circle border border-primary me-3" width="60" height="60">
+                            <div>
+                                <p class="fw-bold mb-0">[Client Name]</p>
+                                <p class="small text-light-gray mb-0">Founder, D2C Brand</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-card p-4 h-100">
+                        <div class="mb-4">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="text-light-gray mb-4">
+                            "As a YouTuber, I used to spend days planning episodes. Now I plug in my topics, and the
+                            Studio X workflow gives me hooks, scripts, and edit-ready assets."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://i.pravatar.cc/60?img=2" alt="Creator"
+                                class="rounded-circle border border-primary me-3" width="60" height="60">
+                            <div>
+                                <p class="fw-bold mb-0">[Creator Name]</p>
+                                <p class="small text-light-gray mb-0">YouTube Creator</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-card p-4 h-100">
+                        <div class="mb-4">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="text-light-gray mb-4">
+                            "Our training videos used to be dry and text-heavy. Studio X turned them into engaging
+                            modules with clear visuals and narration."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://i.pravatar.cc/60?img=3" alt="L&D Head"
+                                class="rounded-circle border border-primary me-3" width="60" height="60">
+                            <div>
+                                <p class="fw-bold mb-0">[Name]</p>
+                                <p class="small text-light-gray mb-0">L&D Head, Corporate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="contact" class="py-6 position-relative">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <p class="small-label mb-3">
+                        READY WHEN YOU ARE
+                    </p>
+                    <h2 class="display-3 fw-bold mb-4">
+                        Let's Build Your Next High-Impact Video
+                    </h2>
+                    <p class="lead text-light-gray mb-5">
+                        Tell us what you're trying to achieve — launch, educate, or sell — and we'll show you how
+                        Studio X can get you there.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-4">
+                        <a href="#" class="btn btn-primary btn-lg px-5 py-3">
+                            <i class="bi bi-arrow-right me-2"></i>Book a Free Strategy Call
+                        </a>
+                        <a href="#portfolio" class="btn btn-outline-light btn-lg px-5 py-3">
+                            <i class="bi bi-play-circle me-2"></i>View Work First
+                        </a>
+                    </div>
+                    <p class="small text-muted">
+                        No spam. No pressure. Just honest ideas, timelines, and possibilities for your brand's video
+                        content.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3 text-gradient">STUDIO X</h5>
+                    <p class="text-light-gray">
+                        Cinematic videos powered by Studio X. AI-enhanced video production for brands that
+                        want to stand out.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+                    <h6 class="fw-bold mb-3 text-white">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#how-it-works" class="text-light-gray text-decoration-none">How It
+                                Works</a></li>
+                        <li class="mb-2"><a href="#antigravity" class="text-light-gray text-decoration-none">Studio X
+                                Engine</a></li>
+                        <li class="mb-2"><a href="#use-cases" class="text-light-gray text-decoration-none">Use Cases</a>
+                        </li>
+                        <li class="mb-2"><a href="#pricing" class="text-light-gray text-decoration-none">Pricing</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+                    <h6 class="fw-bold mb-3 text-white">Resources</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#portfolio" class="text-light-gray text-decoration-none">Portfolio</a>
+                        </li>
+                        <li class="mb-2"><a href="#testimonials"
+                                class="text-light-gray text-decoration-none">Testimonials</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-light-gray text-decoration-none">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h6 class="fw-bold mb-3 text-white">Connect</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light-gray fs-4"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light-gray fs-4"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-light-gray fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light-gray fs-4"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="text-center text-light-gray">
+                <p class="mb-0">&copy; 2024 Studio X. All rights reserved. Powered by Studio X.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                navbar.style.background = 'transparent';
+            }
+        });
+    </script>
+</body>
+
+</html>

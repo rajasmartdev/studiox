@@ -1,0 +1,213 @@
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --dark-overlay: rgba(0, 0, 0, 0.75);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Video Background */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-overlay);
+    z-index: -1;
+}
+
+/* Glassmorphism */
+.glass-nav {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Form Inputs */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-shadow: none;
+    border-color: var(--primary-color);
+}
+
+/* Showcase Hover Effect */
+.hover-reveal {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.glass-card:hover .hover-reveal {
+    opacity: 1;
+}
+
+/* Typography */
+h1, h2, h3 {
+    letter-spacing: -0.02em;
+}
+
+.lead {
+    font-weight: 300;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #fff, #a29bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Logo Marquee */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-content img {
+    height: 40px;
+    margin: 0 40px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.marquee-content img:hover {
+    opacity: 1;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Steps (How It Works) */
+.step-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+/* Pricing */
+.pricing-card {
+    transition: transform 0.3s ease;
+}
+
+.pricing-card.popular {
+    background: rgba(108, 92, 231, 0.2);
+    border-color: var(--primary-color);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.check-list li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.check-list li::before {
+    content: "✓";
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Testimonials */
+.avatar {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+}
+
+/* Video Demo */
+.demo-video-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--primary-color);
+}
