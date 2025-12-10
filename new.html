@@ -16,9 +16,9 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: #1a1a1a;
+            color: #ffffff;
             overflow-x: hidden;
-            background: #ffffff;
+            background: #000000;
         }
 
         /* Animations */
@@ -227,42 +227,46 @@
 
         /* Brand Logos Section */
         .brands-section {
-            padding: 60px 0;
-            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            padding: 80px 0;
+            background: #0a0a0a;
             position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .brands-title {
             text-align: center;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #00d2ff;
-            margin-bottom: 2.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: rgba(0, 210, 255, 0.8);
+            margin-bottom: 3rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
         }
 
         .brand-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.02);
             padding: 1.5rem 2rem;
-            border-radius: 15px;
+            border-radius: 12px;
             text-align: center;
             transition: all 0.3s;
-            border: 2px solid transparent;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: none;
         }
 
         .brand-card:hover {
-            transform: translateY(-5px);
-            border-color: #00d2ff;
-            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
+            transform: translateY(-3px);
+            border-color: rgba(0, 210, 255, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.1);
         }
 
         .brand-name {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: #1a1a1a;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
             margin: 0;
+            letter-spacing: 1px;
         }
 
         .brand-logo:hover {
@@ -307,14 +311,16 @@
         .video-grid-section {
             padding: 100px 0;
             background: #000000;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .video-grid-section h2 {
             color: white;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             text-align: center;
             margin-bottom: 3rem;
+            letter-spacing: -0.5px;
         }
 
         .video-grid {
@@ -394,36 +400,40 @@
         /* Portfolio Section */
         .portfolio-section {
             padding: 100px 0;
-            background: #f9fafb;
+            background: #000000;
         }
 
         .section-title {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             text-align: center;
             margin-bottom: 1rem;
-            color: #000000;
+            color: #ffffff;
+            letter-spacing: -0.5px;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.2rem;
-            color: #6b7280;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.6);
             margin-bottom: 5rem;
+            font-weight: 400;
         }
 
         .portfolio-card {
-            background: white;
-            border-radius: 20px;
+            background: #0a0a0a;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             margin-bottom: 4rem;
             transition: all 0.4s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .portfolio-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(0, 210, 255, 0.15);
+            border-color: rgba(0, 210, 255, 0.3);
         }
 
         .video-wrapper {
@@ -470,10 +480,10 @@
         }
 
         .portfolio-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
-            color: #000000;
+            color: #ffffff;
         }
 
         .portfolio-brief {
@@ -493,64 +503,230 @@
         }
 
         .portfolio-response {
-            background: #e6f7ff;
+            background: rgba(0, 210, 255, 0.08);
             padding: 1.3rem;
-            border-radius: 12px;
-            border-left: 5px solid #00d2ff;
+            border-radius: 10px;
+            border-left: 3px solid #00d2ff;
         }
 
         .portfolio-response strong {
-            color: #000000;
+            color: #ffffff;
             font-weight: 700;
         }
 
-        /* Services Section */
-        .services-section {
-            padding: 100px 0;
-            background: white;
+        /* Services Visual Section - Split Screen Layout */
+        .services-visual-section {
+            padding: 0;
+            background: #000000;
         }
 
-        .service-card {
-            background: #f9fafb;
-            padding: 2.5rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.4s;
-            border: 2px solid transparent;
+        .split-section {
+            display: flex;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .split-section.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .split-image {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            min-height: 50vh;
+        }
+
+        .split-image img {
+            width: 100%;
             height: 100%;
-            margin-bottom: 2rem;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: #00d2ff;
-            box-shadow: 0 20px 60px rgba(0, 210, 255, 0.15);
-            background: white;
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
+            z-index: 1;
         }
 
-        .service-icon {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #00d2ff 0%, #0099cc 100%);
-            border-radius: 20px;
+        .split-content {
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2.5rem;
-            color: white;
+            padding: 4rem;
+            background: #000000;
+            position: relative;
+        }
+
+        .split-content-inner {
+            max-width: 600px;
+        }
+
+        .split-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #00d2ff;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .split-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .split-desc {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2.5rem;
+        }
+
+        .service-list li {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+        }
+
+        .service-list i {
+            color: #00d2ff;
+        }
+
+        .btn-outline-custom {
+            border: 2px solid #00d2ff;
+            color: #00d2ff;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            background: transparent;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-custom:hover {
+            background: #00d2ff;
+            color: #000000;
+            transform: translateX(5px);
+        }
+
+        /* Industries Visual Grid */
+        .industries-visual-section {
+            padding: 100px 0;
+            background: #000000;
+        }
+
+        .industries-image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .industry-visual-card {
+            position: relative;
+            aspect-ratio: 16/9;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .industry-visual-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .industry-visual-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
             transition: all 0.4s;
         }
 
-        .service-card:hover .service-icon {
-            transform: rotateY(360deg);
+        .industry-visual-content h3 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
 
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: 700;
+        .industry-visual-content p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.8;
+            transform: translateY(10px);
+            transition: all 0.4s;
+        }
+
+        .industry-visual-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .industry-visual-card:hover p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .industry-visual-icon {
+            font-size: 2rem;
+            color: #00d2ff;
             margin-bottom: 1rem;
-            color: #000000;
+            display: inline-block;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 992px) {
+            .split-section {
+                flex-direction: column !important;
+                min-height: auto;
+            }
+
+            .split-image {
+                height: 50vh;
+                min-height: 300px;
+            }
+
+            .split-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .split-title {
+                font-size: 2.2rem;
+            }
+
+            .industries-image-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Features Section */
@@ -605,16 +781,17 @@
         /* Process Section - Redesigned */
         .process-section {
             padding: 100px 0;
-            background: white;
+            background: #0a0a0a;
             position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .process-section h2 {
-            color: #000000;
+            color: #ffffff;
         }
 
         .process-section .section-subtitle {
-            color: #6b7280;
+            color: rgba(255, 255, 255, 0.6);
         }
 
         .process-grid {
@@ -625,14 +802,14 @@
         }
 
         .process-card {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: rgba(255, 255, 255, 0.02);
             padding: 3rem 2rem;
-            border-radius: 25px;
+            border-radius: 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
             transition: all 0.4s;
-            border: 2px solid transparent;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .process-card::before {
@@ -652,9 +829,10 @@
         }
 
         .process-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            border-color: #00d2ff;
-            box-shadow: 0 25px 70px rgba(0, 210, 255, 0.3);
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(0, 210, 255, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 210, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .process-card-number {
@@ -847,23 +1025,26 @@
         /* Testimonials */
         .testimonials-section {
             padding: 100px 0;
-            background: #f9fafb;
+            background: #000000;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .testimonial-card {
-            background: white;
+            background: #0a0a0a;
             padding: 3.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             margin-bottom: 2rem;
             position: relative;
             transition: all 0.4s;
             height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .testimonial-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 70px rgba(0, 210, 255, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 50px rgba(0, 210, 255, 0.15);
+            border-color: rgba(0, 210, 255, 0.3);
         }
 
         .quote-icon {
@@ -876,9 +1057,9 @@
         }
 
         .testimonial-text {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             line-height: 1.8;
-            color: #1f2937;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 1.5rem;
             position: relative;
             z-index: 1;
@@ -918,9 +1099,10 @@
         }
 
         .cta-section h2 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
+            letter-spacing: -1px;
         }
 
         .cta-section p {
@@ -1083,6 +1265,96 @@
                 font-size: 2.2rem;
             }
         }
+
+        /* Industries Visual Grid - Refined Match */
+        .industries-visual-section {
+            padding: 100px 0;
+            background: #000000;
+        }
+
+        .industries-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .industries-header h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .industries-header .highlight {
+            color: #00d2ff;
+        }
+
+        .industries-image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .industry-visual-card {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .industry-visual-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) brightness(0.8) contrast(1.1);
+            transition: all 0.5s ease;
+        }
+
+        .industry-visual-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            transition: all 0.4s;
+            opacity: 0;
+        }
+
+        .industry-visual-content h3 {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            transform: translateY(20px);
+            transition: all 0.4s;
+        }
+
+        .industry-visual-card:hover img {
+            filter: grayscale(0%) brightness(1) contrast(1);
+            transform: scale(1.05);
+        }
+
+        .industry-visual-card:hover .industry-visual-overlay {
+            opacity: 1;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+        }
+
+        .industry-visual-card:hover h3 {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 992px) {
+            .industries-header h2 {
+                font-size: 2.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -1113,6 +1385,8 @@
         </div>
     </nav>
 
+
+
     <!-- Hero Section -->
     <section class="hero">
         <video class="hero-video" autoplay muted loop playsinline>
@@ -1138,118 +1412,6 @@
         </div>
     </section>
 
-    <!-- Brands Section -->
-    <section class="brands-section">
-        <div class="container">
-            <h3 class="brands-title">Brands That Trust Us</h3>
-            <div class="row align-items-center justify-content-center g-5">
-                <div class="col-6 col-md-2">
-                    <div class="scale-in" style="animation-delay: 0.1s;">
-                        <div class="brand-logo"
-                            style="background: #f3f4f6; padding: 1rem; border-radius: 10px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #6b7280;">
-                            VALLEY HOMES</div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="brand-card scale-in" style="animation-delay: 0.2s;">
-                        <p class="brand-name">MARQUE CLUB</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="brand-card scale-in" style="animation-delay: 0.3s;">
-                        <p class="brand-name">GOLDEN<br>PROPORTIONS</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="brand-card scale-in" style="animation-delay: 0.4s;">
-                        <p class="brand-name">ROSE OF<br>AUSTRALIA</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Video Grid Section -->
-    <section class="video-grid-section">
-        <div class="container">
-            <h2 class="fade-in-up">See Our Work In Action</h2>
-            <div class="video-grid mt-5">
-                <div class="video-grid-item scale-in" style="animation-delay: 0.1s;">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800" alt="Real Estate">
-                    <div class="play-btn"><i class="fas fa-play"></i></div>
-                    <div class="video-grid-overlay">
-                        <div class="video-category">REAL ESTATE</div>
-                        <div class="video-title">Luxury Property Tour</div>
-                    </div>
-                </div>
-                <div class="video-grid-item scale-in" style="animation-delay: 0.2s;">
-                    <img src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?w=800" alt="Corporate">
-                    <div class="play-btn"><i class="fas fa-play"></i></div>
-                    <div class="video-grid-overlay">
-                        <div class="video-category">CORPORATE</div>
-                        <div class="video-title">Brand Story</div>
-                    </div>
-                </div>
-                <div class="video-grid-item scale-in" style="animation-delay: 0.3s;">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800" alt="Healthcare">
-                    <div class="play-btn"><i class="fas fa-play"></i></div>
-                    <div class="video-grid-overlay">
-                        <div class="video-category">HEALTHCARE</div>
-                        <div class="video-title">Medical Excellence</div>
-                    </div>
-                </div>
-                <div class="video-grid-item scale-in" style="animation-delay: 0.4s;">
-                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800" alt="Food">
-                    <div class="play-btn"><i class="fas fa-play"></i></div>
-                    <div class="video-grid-overlay">
-                        <div class="video-category">HOSPITALITY</div>
-                        <div class="video-title">Restaurant Promo</div>
-                    </div>
-                </div>
-                <div class="video-grid-item scale-in" style="animation-delay: 0.5s;">
-                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800" alt="Retail">
-                    <div class="play-btn"><i class="fas fa-play"></i></div>
-                    <div class="video-grid-overlay">
-                        <div class="video-category">E-COMMERCE</div>
-                        <div class="video-title">Product Launch</div>
-                    </div>
-                </div>
-                <div class="video-grid-item scale-in" style="animation-delay: 0.6s;">
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" alt="Tech">
-                    <div class="play-btn"><i class="fas fa-play"></i></div>
-                    <div class="video-grid-overlay">
-                        <div class="video-category">TECHNOLOGY</div>
-                        <div class="video-title">SaaS Demo</div>
-                    </div>
-                </div>
-                <div class="video-grid-item scale-in" style="animation-delay: 0.7s;">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800" alt="Fashion">
-                    <div class="play-btn"><i class="fas fa-play"></i></div>
-                    <div class="video-grid-overlay">
-                        <div class="video-category">FASHION</div>
-                        <div class="video-title">Brand Campaign</div>
-                    </div>
-                </div>
-                <div class="video-grid-item scale-in" style="animation-delay: 0.8s;">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800" alt="Office">
-                    <div class="play-btn"><i class="fas fa-play"></i></div>
-                    <div class="video-grid-overlay">
-                        <div class="video-category">CORPORATE</div>
-                        <div class="video-title">Culture Video</div>
-                    </div>
-                </div>
-                <div class="video-grid-item scale-in" style="animation-delay: 0.9s;">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800" alt="Event">
-                    <div class="play-btn"><i class="fas fa-play"></i></div>
-                    <div class="video-grid-overlay">
-                        <div class="video-category">EVENTS</div>
-                        <div class="video-title">Event Highlights</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio-section">
@@ -1366,65 +1528,96 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 class="section-title fade-in-up">What We Create</h2>
-            <p class="section-subtitle fade-in-up">Cinematic storytelling across every business need</p>
+     <!-- Video Background Section -->
+    <section class="video-bg-section">
+        <video autoplay muted loop playsinline>
+            <source src="https://studioxai.com.au/assets/videos/yt.mp4" type="video/mp4">
+        </video>
+        <div class="container video-bg-content">
+            <h2 class="fade-in-up">Transform Your Brand with AI-Powered Video</h2>
+            <p class="fade-in-up">Experience the future of content creation where artificial intelligence meets creative
+                storytelling. We deliver cinematic quality at unprecedented speed.</p>
+            <a href="#contact" class="btn-primary-custom btn-lg fade-in-up">
+                Get Started Today <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
 
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-film"></i>
-                        </div>
-                        <h3 class="service-title">Brand Films</h3>
-                        <p class="portfolio-text">Emotionally charged storytelling that defines who you are</p>
+    <!-- Video Grid Section -->
+    <section class="video-grid-section">
+        <div class="container">
+            <h2 class="fade-in-up">See Our Work In Action</h2>
+            <div class="video-grid mt-5">
+                <div class="video-grid-item scale-in" style="animation-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800" alt="Real Estate">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">REAL ESTATE</div>
+                        <div class="video-title">Luxury Property Tour</div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3 class="service-title">Product Launches</h3>
-                        <p class="portfolio-text">Crystal-clear explainers that make complexity simple</p>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?w=800" alt="Corporate">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">CORPORATE</div>
+                        <div class="video-title">Brand Story</div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h3 class="service-title">Leadership Content</h3>
-                        <p class="portfolio-text">CEO messages with gravitas and authenticity</p>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800" alt="Healthcare">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">HEALTHCARE</div>
+                        <div class="video-title">Medical Excellence</div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="service-title">Social Cinematics</h3>
-                        <p class="portfolio-text">Scroll-stopping content for Instagram, LinkedIn, TikTok</p>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.4s;">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800" alt="Food">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">HOSPITALITY</div>
+                        <div class="video-title">Restaurant Promo</div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h3 class="service-title">Corporate Identity</h3>
-                        <p class="portfolio-text">Culture films that unite teams and inspire stakeholders</p>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.5s;">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800" alt="Retail">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">E-COMMERCE</div>
+                        <div class="video-title">Product Launch</div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3 class="service-title">Customer Stories</h3>
-                        <p class="portfolio-text">Testimonials that build trust and drive decisions</p>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.6s;">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" alt="Tech">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">TECHNOLOGY</div>
+                        <div class="video-title">SaaS Demo</div>
+                    </div>
+                </div>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.7s;">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800" alt="Fashion">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">FASHION</div>
+                        <div class="video-title">Brand Campaign</div>
+                    </div>
+                </div>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.8s;">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800" alt="Office">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">CORPORATE</div>
+                        <div class="video-title">Culture Video</div>
+                    </div>
+                </div>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.9s;">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800" alt="Event">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">EVENTS</div>
+                        <div class="video-title">Event Highlights</div>
                     </div>
                 </div>
             </div>
@@ -1483,20 +1676,111 @@
         </div>
     </section>
 
-    <!-- Video Background Section -->
-    <section class="video-bg-section">
-        <video autoplay muted loop playsinline>
-            <source src="https://studioxai.com.au/assets/videos/yt.mp4" type="video/mp4">
-        </video>
-        <div class="container video-bg-content">
-            <h2 class="fade-in-up">Transform Your Brand with AI-Powered Video</h2>
-            <p class="fade-in-up">Experience the future of content creation where artificial intelligence meets creative
-                storytelling. We deliver cinematic quality at unprecedented speed.</p>
-            <a href="#contact" class="btn-primary-custom btn-lg fade-in-up">
-                Get Started Today <i class="fas fa-arrow-right ms-2"></i>
-            </a>
+    
+
+    <!-- Services Section - Split Screen Layout Matching Reference -->
+    <section id="services" class="services-visual-section">
+        <!-- Service 1: Brand Video Production -->
+        <div class="split-section">
+            <div class="split-image">
+                <img src="https://images.pexels.com/photos/2533318/pexels-photo-2533318.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                    alt="Brand Video Production">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="split-content">
+                <div class="split-content-inner">
+                    <p class="split-label">CINEMATIC, AI-ENHANCED VIDEO THAT SELLS</p>
+                    <h2 class="split-title">Brand Video Production</h2>
+                    <p class="split-desc">Cinematic, story-driven films that captivate audiences. Perfect for launches,
+                        about us, and high-performance ads.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Concept Development</li>
+                        <li><i class="fas fa-check"></i> Scriptwriting</li>
+                        <li><i class="fas fa-check"></i> Professional Voiceovers</li>
+                        <li><i class="fas fa-check"></i> 4K Visual Delivery</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline-custom">VIEW BRAND VIDEOS <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2: YouTube Video Production -->
+        <div class="split-section reverse">
+            <div class="split-image">
+                <img src="https://images.pexels.com/photos/2510428/pexels-photo-2510428.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                    alt="YouTube Video Production">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="split-content">
+                <div class="split-content-inner">
+                    <h2 class="split-title">YouTube Video Production</h2>
+                    <p class="split-desc">Character-driven storytelling that builds loyal subscribers. High-retention
+                        edits and algorithm-friendly formats.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Video Management</li>
+                        <li><i class="fas fa-check"></i> SEO Titles</li>
+                        <li><i class="fas fa-check"></i> Thumbnail Design</li>
+                        <li><i class="fas fa-check"></i> Audience Growth</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline-custom">SEE YOUTUBE WORK <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3: AI Avatar Creation -->
+        <div class="split-section">
+            <div class="split-image">
+                <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                    alt="AI Avatar Creation">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="split-content">
+                <div class="split-content-inner">
+                    <h2 class="split-title">AI Avatar Creation</h2>
+                    <p class="split-desc">Custom realistic avatars representing your brand, available 24/7. Scale your
+                        presence without being on camera.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Custom Avatar Design</li>
+                        <li><i class="fas fa-check"></i> Natural Lip-Sync</li>
+                        <li><i class="fas fa-check"></i> Multi-Language</li>
+                        <li><i class="fas fa-check"></i> Instant Generation</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline-custom">CREATE YOUR AVATAR <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 4: Learning Video Production -->
+        <div class="split-section reverse">
+            <div class="split-image">
+                <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                    alt="Learning Video Production">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="split-content">
+                <div class="split-content-inner">
+                    <h2 class="split-title">Learning Video Production</h2>
+                    <p class="split-desc">Refine complex topics into engaging training experiences for e-learning and
+                        corporate training.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Course Structuring</li>
+                        <li><i class="fas fa-check"></i> Visual Overlays</li>
+                        <li><i class="fas fa-check"></i> Scalable Updates</li>
+                        <li><i class="fas fa-check"></i> Global Engagement</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline-custom">TEACH WITH VIDEO <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
     </section>
+
+    
+
+   
 
     <!-- Process Section -->
     <section id="process" class="process-section">
@@ -1538,119 +1822,72 @@
         </div>
     </section>
 
-    <!-- Industries Section -->
-    <section id="industries" class="industries-section">
-        <div class="container industries-container">
-            <h2 class="section-title fade-in-up">Built For Every Ambition</h2>
-            <p class="section-subtitle fade-in-up">From startups to enterprises, we speak your industry's language</p>
+    <!-- Industries Section - Image Grid Matching Reference "Crafted for businesses" -->
+    <section id="industries" class="industries-visual-section">
+        <div class="container">
+            <div class="industries-header fade-in-up">
+                <h2>Crafted for businesses<br>where clarity <span class="highlight">drives growth.</span></h2>
+            </div>
 
-            <div class="industries-grid-new">
-                <div class="industry-card-new fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="industry-icon-new">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="industry-name-new">Real Estate & Construction</h3>
-                    <div class="industry-meta">
-                        <div>
-                            <p class="industry-for-new">Perfect For</p>
-                            <p class="industry-desc-new">Developers, builders, agents</p>
+            <div class="industries-image-grid">
+                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.1s;">
+                    <img src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Strategy">
+                    <div class="industry-visual-overlay">
+                        <div class="industry-visual-content">
+                            <h3>Strategy</h3>
                         </div>
                     </div>
-                    <div class="industry-divider"></div>
-                    <p class="industry-benefit-new">
-                        <i class="fas fa-check-circle"></i>
-                        Emotional home stories that close deals
-                    </p>
                 </div>
 
-                <div class="industry-card-new fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="industry-icon-new">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3 class="industry-name-new">Healthcare & Medical</h3>
-                    <div class="industry-meta">
-                        <div>
-                            <p class="industry-for-new">Perfect For</p>
-                            <p class="industry-desc-new">Clinics, specialists, wellness</p>
+                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.2s;">
+                    <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Leadership">
+                    <div class="industry-visual-overlay">
+                        <div class="industry-visual-content">
+                            <h3>Leadership</h3>
                         </div>
                     </div>
-                    <div class="industry-divider"></div>
-                    <p class="industry-benefit-new">
-                        <i class="fas fa-check-circle"></i>
-                        Trust and authority before first consultation
-                    </p>
                 </div>
 
-                <div class="industry-card-new fade-in-up" style="animation-delay: 0.3s;">
-                    <div class="industry-icon-new">
-                        <i class="fas fa-hotel"></i>
-                    </div>
-                    <h3 class="industry-name-new">Hospitality & Tourism</h3>
-                    <div class="industry-meta">
-                        <div>
-                            <p class="industry-for-new">Perfect For</p>
-                            <p class="industry-desc-new">Hotels, restaurants, venues</p>
+                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.3s;">
+                    <img src="https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Innovation">
+                    <div class="industry-visual-overlay">
+                        <div class="industry-visual-content">
+                            <h3>Innovation</h3>
                         </div>
                     </div>
-                    <div class="industry-divider"></div>
-                    <p class="industry-benefit-new">
-                        <i class="fas fa-check-circle"></i>
-                        Experiences viewers can taste and feel
-                    </p>
                 </div>
 
-                <div class="industry-card-new fade-in-up" style="animation-delay: 0.4s;">
-                    <div class="industry-icon-new">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3 class="industry-name-new">Professional Services</h3>
-                    <div class="industry-meta">
-                        <div>
-                            <p class="industry-for-new">Perfect For</p>
-                            <p class="industry-desc-new">Law, finance, consulting</p>
+                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.4s;">
+                    <img src="https://images.pexels.com/photos/1181438/pexels-photo-1181438.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Technology">
+                    <div class="industry-visual-overlay">
+                        <div class="industry-visual-content">
+                            <h3>Technology</h3>
                         </div>
                     </div>
-                    <div class="industry-divider"></div>
-                    <p class="industry-benefit-new">
-                        <i class="fas fa-check-circle"></i>
-                        Credibility and expertise visualized
-                    </p>
                 </div>
 
-                <div class="industry-card-new fade-in-up" style="animation-delay: 0.5s;">
-                    <div class="industry-icon-new">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <h3 class="industry-name-new">E-commerce & Retail</h3>
-                    <div class="industry-meta">
-                        <div>
-                            <p class="industry-for-new">Perfect For</p>
-                            <p class="industry-desc-new">Fashion, beauty, lifestyle</p>
+                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.5s;">
+                    <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Collaboration">
+                    <div class="industry-visual-overlay">
+                        <div class="industry-visual-content">
+                            <h3>Collaboration</h3>
                         </div>
                     </div>
-                    <div class="industry-divider"></div>
-                    <p class="industry-benefit-new">
-                        <i class="fas fa-check-circle"></i>
-                        Product transformations that convert
-                    </p>
                 </div>
 
-                <div class="industry-card-new fade-in-up" style="animation-delay: 0.7s;">
-                    <div class="industry-icon-new">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="industry-name-new">Education & Training</h3>
-                    <div class="industry-meta">
-                        <div>
-                            <p class="industry-for-new">Perfect For</p>
-                            <p class="industry-desc-new">Schools, courses, coaching</p>
+                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.6s;">
+                    <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Growth">
+                    <div class="industry-visual-overlay">
+                        <div class="industry-visual-content">
+                            <h3>Growth</h3>
                         </div>
                     </div>
-                    <div class="industry-divider"></div>
-                    <p class="industry-benefit-new">
-                        <i class="fas fa-check-circle"></i>
-                        Learning that actually engages
-                    </p>
                 </div>
             </div>
         </div>

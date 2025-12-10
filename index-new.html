@@ -4,271 +4,1686 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio X - AI-Enhanced Cinematic Video</title>
-    <meta name="description" content="Studio X - Premium AI filmmaking that turns browsers into buyers.">
+    <title>STUDIO X AI - Your Brand's Blockbuster in 96 Hours</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            background: #ffffff;
+        }
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles-new.css">
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .scale-in {
+            animation: scaleIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Header */
+        .navbar {
+            padding: 1.5rem 0;
+            background: transparent;
+            backdrop-filter: none;
+            border-bottom: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .navbar.scrolled {
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo-img {
+            height: 45px;
+            transition: transform 0.3s;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.95) !important;
+            font-weight: 500;
+            margin: 0 0.8rem;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: #00d2ff !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: white;
+            padding: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(0, 210, 255, 0.3) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(0, 210, 255, 0.2) 0%, transparent 40%);
+            animation: float 12s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00d2ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .lead {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, #00d2ff 0%, #0099cc 100%);
+            border: none;
+            padding: 1.1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 8px 30px rgba(0, 210, 255, 0.4);
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 210, 255, 0.5);
+            background: linear-gradient(135deg, #0099cc 0%, #007799 100%);
+            color: white;
+        }
+
+        .btn-outline-custom {
+            border: 2px solid white;
+            color: white;
+            padding: 1.1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            background: transparent;
+            transition: all 0.3s;
+            margin-left: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-custom:hover {
+            background: white;
+            color: #000000;
+            transform: translateY(-3px);
+        }
+
+        /* Brand Logos Section */
+        .brands-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .brands-title {
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #00d2ff;
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .brand-card {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d2ff;
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
+        }
+
+        .brand-name {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        .brand-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .stats-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* Video Grid Section */
+        .video-grid-section {
+            padding: 100px 0;
+            background: #000000;
+        }
+
+        .video-grid-section h2 {
+            color: white;
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .video-grid-item {
+            position: relative;
+            aspect-ratio: 16/9;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+
+        .video-grid-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 210, 255, 0.3);
+        }
+
+        .video-grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .video-category {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #00d2ff;
+        }
+
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 210, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .video-grid-item:hover .play-btn {
+            transform: translate(-50%, -50%) scale(1.15);
+            background: rgba(0, 210, 255, 1);
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 5rem;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 4rem;
+            transition: all 0.4s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .video-placeholder:hover {
+            background: linear-gradient(135deg, #00d2ff 0%, #0099cc 100%);
+        }
+
+        .portfolio-content {
+            padding: 3rem;
+        }
+
+        .portfolio-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d2ff 0%, #0099cc 100%);
+            color: white;
+            padding: 0.6rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #000000;
+        }
+
+        .portfolio-brief {
+            font-size: 1rem;
+            color: #00d2ff;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .portfolio-text {
+            color: #4b5563;
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .portfolio-response {
+            background: #e6f7ff;
+            padding: 1.3rem;
+            border-radius: 12px;
+            border-left: 5px solid #00d2ff;
+        }
+
+        .portfolio-response strong {
+            color: #000000;
+            font-weight: 700;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .service-card {
+            background: #f9fafb;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s;
+            border: 2px solid transparent;
+            height: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d2ff;
+            box-shadow: 0 20px 60px rgba(0, 210, 255, 0.15);
+            background: white;
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #00d2ff 0%, #0099cc 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+            transition: all 0.4s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(360deg);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 210, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-number {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00d2ff 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .feature-text {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Process Section - Redesigned */
+        .process-section {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+
+        .process-section h2 {
+            color: #000000;
+        }
+
+        .process-section .section-subtitle {
+            color: #6b7280;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .process-card {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            padding: 3rem 2rem;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+            border: 2px solid transparent;
+        }
+
+        .process-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(0, 210, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .process-card:hover::before {
+            opacity: 1;
+        }
+
+        .process-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: #00d2ff;
+            box-shadow: 0 25px 70px rgba(0, 210, 255, 0.3);
+        }
+
+        .process-card-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00d2ff 0%, #0099cc 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.4);
+        }
+
+        .process-card-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-card-desc {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            font-size: 1.05rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-card-icon {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            font-size: 120px;
+            color: rgba(0, 210, 255, 0.05);
+            z-index: 1;
+        }
+
+        /* Industries Section - Redesigned with Hexagon Grid */
+        .industries-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industries-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(0, 210, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 210, 255, 0.08) 0%, transparent 50%);
+        }
+
+        .industries-section h2 {
+            color: white;
+        }
+
+        .industries-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .industries-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .industries-grid-new {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .industry-card-new {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0, 210, 255, 0.2);
+            border-radius: 25px;
+            padding: 3rem 2.5rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industry-card-new::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.6s;
+        }
+
+        .industry-card-new:hover::before {
+            transform: scale(1);
+        }
+
+        .industry-card-new:hover {
+            transform: translateY(-15px);
+            border-color: #00d2ff;
+            background: rgba(0, 210, 255, 0.08);
+            box-shadow: 0 30px 80px rgba(0, 210, 255, 0.25);
+        }
+
+        .industry-icon-new {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #00d2ff 0%, #0099cc 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 210, 255, 0.3);
+            transition: all 0.4s;
+        }
+
+        .industry-card-new:hover .industry-icon-new {
+            transform: rotateY(360deg) scale(1.1);
+            box-shadow: 0 15px 50px rgba(0, 210, 255, 0.5);
+        }
+
+        .industry-name-new {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .industry-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .industry-for-new {
+            font-size: 0.85rem;
+            color: #00d2ff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.3rem;
+        }
+
+        .industry-desc-new {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .industry-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #00d2ff 50%, transparent 100%);
+            margin: 1.5rem 0;
+        }
+
+        .industry-benefit-new {
+            color: white;
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .industry-benefit-new i {
+            color: #00d2ff;
+            font-size: 1.2rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 3.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            position: relative;
+            transition: all 0.4s;
+            height: 100%;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 70px rgba(0, 210, 255, 0.15);
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: #00d2ff;
+            opacity: 0.2;
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            font-weight: 500;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #00d2ff;
+            font-size: 1.1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, transparent 70%);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #f97316;
+        }
+
+        .footer-text {
+            opacity: 0.7;
+            line-height: 1.8;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            margin-right: 1rem;
+            transition: all 0.3s;
+            color: white;
+        }
+
+        .social-links a:hover {
+            background: #00d2ff;
+            transform: translateY(-3px);
+        }
+
+        /* Video Background Section */
+        .video-bg-section {
+            position: relative;
+            padding: 120px 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-bg-section video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        .video-bg-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .video-bg-content h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .video-bg-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .lead {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .btn-outline-custom {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin: 0 auto 1.5rem;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .process-timeline::before {
+                left: 20px;
+            }
+
+            .timeline-number {
+                left: 20px;
+                transform: none;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .industries-grid-new {
+                grid-template-columns: 1fr;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container-fluid px-4">
-            <a class="navbar-brand fw-bold fs-4" href="#">
-                <span class="brand-text">STUDIO X</span>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://studioxai.com.au/assets/images/Studio%20X_Logo_Blue.png" alt="Studio X AI"
+                    class="logo-img">
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#works">Works</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Our Work</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn btn-primary-custom px-4 py-2" href="#contact">Get Started</a>
+                    <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item ms-3">
+                        <a href="#contact" class="btn-primary-custom"
+                            style="padding: 0.7rem 1.8rem; font-size: 0.95rem;">Get Started</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section - Full Screen Video -->
-    <section id="hero" class="hero-section">
+    <!-- Hero Section -->
+    <section class="hero">
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4" type="video/mp4">
+            <source src="https://studioxai.com.au/assets/videos/studioxaim.mp4" type="video/mp4">
         </video>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Your Brand's Blockbuster<br>in <span class="highlight">96 Hours</span></h1>
-            <p class="hero-subtitle">Premium AI filmmaking that turns browsers into buyers</p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn btn-hero-primary">Start Creating</a>
-                <a href="#works" class="btn btn-hero-secondary">Watch Our Work</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="bi bi-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- Selected Works - Video Grid -->
-    <section id="works" class="works-section">
-        <div class="container-fluid px-4">
-            <div class="section-header text-center mb-5">
-                <p class="section-label">PORTFOLIO</p>
-                <h2 class="section-title">We Build Brand Connections</h2>
-            </div>
-
-            <div class="video-grid">
-                <!-- Project 1 -->
-                <div class="video-grid-item large">
-                    <video class="grid-video" muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/853800/853800-hd_1920_1080_25fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="grid-overlay">
-                        <span class="project-tag">Real Estate</span>
-                        <h3 class="project-title">Valley Homes</h3>
-                        <p class="project-result"><i class="bi bi-graph-up-arrow"></i> 50% higher engagement</p>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="video-grid-item">
-                    <video class="grid-video" muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/3130182/3130182-hd_1920_1080_30fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="grid-overlay">
-                        <span class="project-tag">Luxury</span>
-                        <h3 class="project-title">The Marque Club</h3>
-                        <p class="project-result"><i class="bi bi-check-circle-fill"></i> Full waitlist pre-launch</p>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="video-grid-item">
-                    <video class="grid-video" muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/5473806/5473806-hd_1920_1080_30fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="grid-overlay">
-                        <span class="project-tag">Medical</span>
-                        <h3 class="project-title">Clinic Golden Proportions</h3>
-                        <p class="project-result"><i class="bi bi-people-fill"></i> Consultation growth</p>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="video-grid-item large">
-                    <video class="grid-video" muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/3205916/3205916-hd_1920_1080_25fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="grid-overlay">
-                        <span class="project-tag">Hospitality</span>
-                        <h3 class="project-title">Rose of Australia</h3>
-                        <p class="project-result"><i class="bi bi-star-fill"></i> Outstanding footfall</p>
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center fade-in-up">
+                    <h1>Your Brand's Blockbuster in 96 Hours</h1>
+                    <p class="lead">Premium AI filmmaking that turns browsers into buyers—delivered at the speed of
+                        business.</p>
+                    <p class="subtitle">Built for brands who refuse to blend in.</p>
+                    <div class="mt-4">
+                        <a href="#contact" class="btn-primary-custom">
+                            Start Creating <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                        <a href="#portfolio" class="btn-outline-custom">
+                            <i class="fas fa-play me-2"></i> Watch Our Work
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works - Horizontal Scroll -->
-    <section id="process" class="process-section">
-        <div class="container-fluid px-4">
-            <div class="section-header text-center mb-5">
-                <p class="section-label">WORKFLOW</p>
-                <h2 class="section-title">Your 4-Day Journey</h2>
-            </div>
-
-            <div class="process-scroll">
-                <div class="process-card">
-                    <video class="process-video" autoplay muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/3196344/3196344-hd_1920_1080_25fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="process-content">
-                        <span class="process-number">01</span>
-                        <h3>Share Your Vision</h3>
-                        <p>Tell your story, upload assets, approve script</p>
+    <!-- Brands Section -->
+    <section class="brands-section">
+        <div class="container">
+            <h3 class="brands-title">Brands That Trust Us</h3>
+            <div class="row align-items-center justify-content-center g-5">
+                <div class="col-6 col-md-2">
+                    <div class="scale-in" style="animation-delay: 0.1s;">
+                        <div class="brand-logo"
+                            style="background: #f3f4f6; padding: 1rem; border-radius: 10px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #6b7280;">
+                            VALLEY HOMES</div>
                     </div>
                 </div>
-
-                <div class="process-card">
-                    <video class="process-video" autoplay muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/3130284/3130284-hd_1920_1080_30fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="process-content">
-                        <span class="process-number">02</span>
-                        <h3>AI Brings It to Life</h3>
-                        <p>Real products meet AI characters</p>
+                <div class="col-6 col-md-3">
+                    <div class="brand-card scale-in" style="animation-delay: 0.2s;">
+                        <p class="brand-name">MARQUE CLUB</p>
                     </div>
                 </div>
-
-                <div class="process-card">
-                    <video class="process-video" autoplay muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/4443688/4443688-hd_1920_1080_25fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="process-content">
-                        <span class="process-number">03</span>
-                        <h3>Refine Together</h3>
-                        <p>Quick feedback cycles in hours</p>
+                <div class="col-6 col-md-3">
+                    <div class="brand-card scale-in" style="animation-delay: 0.3s;">
+                        <p class="brand-name">GOLDEN<br>PROPORTIONS</p>
                     </div>
                 </div>
-
-                <div class="process-card">
-                    <video class="process-video" autoplay muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/3130182/3130182-hd_1920_1080_30fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="process-content">
-                        <span class="process-number">04</span>
-                        <h3>Launch Everywhere</h3>
-                        <p>Broadcast-ready for all platforms</p>
+                <div class="col-6 col-md-3">
+                    <div class="brand-card scale-in" style="animation-delay: 0.4s;">
+                        <p class="brand-name">ROSE OF<br>AUSTRALIA</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services - Split Screen Videos -->
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">We Don't Just Make Videos. We Build Brand Connections.</h2>
+            <p class="section-subtitle fade-in-up">See how we've transformed brands through cinematic storytelling</p>
+
+            <!-- Valley Homes -->
+            <div class="portfolio-card fade-in-up">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="video-wrapper">
+                            <div class="video-placeholder">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">Real Estate</span>
+                            <h3 class="portfolio-title">Valley Homes</h3>
+                            <p class="portfolio-brief">The Brief:</p>
+                            <p class="portfolio-text">"Sell the feeling of home through emotional storytelling"</p>
+                            <p class="portfolio-brief">What We Delivered:</p>
+                            <p class="portfolio-text">30-second cinematic with AI families in real display homes. No
+                                sales pitch. Pure emotion that converts.</p>
+                            <div class="portfolio-response">
+                                <strong>Response:</strong> 50% higher engagement than previous campaigns
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Marque Club -->
+            <div class="portfolio-card fade-in-up">
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="video-wrapper">
+                            <div class="video-placeholder">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">Luxury Living</span>
+                            <h3 class="portfolio-title">The Marque Club</h3>
+                            <p class="portfolio-brief">The Brief:</p>
+                            <p class="portfolio-text">"Create exclusivity before launch"</p>
+                            <p class="portfolio-brief">What We Delivered:</p>
+                            <p class="portfolio-text">Ultra-luxe teaser using 3D designs with sophisticated AI
+                                characters embodying premium lifestyle.</p>
+                            <div class="portfolio-response">
+                                <strong>Response:</strong> Full membership waitlist pre-launch
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clinic Golden Proportions -->
+            <div class="portfolio-card fade-in-up">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="video-wrapper">
+                            <div class="video-placeholder">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">Healthcare</span>
+                            <h3 class="portfolio-title">Clinic Golden Proportions</h3>
+                            <p class="portfolio-brief">The Brief:</p>
+                            <p class="portfolio-text">"Mathematical precision meets medical mastery"</p>
+                            <p class="portfolio-brief">What We Delivered:</p>
+                            <p class="portfolio-text">30-second authority piece. "15,000 transformations. One master
+                                surgeon."</p>
+                            <div class="portfolio-response">
+                                <strong>Response:</strong> Exceptional patient trust and consultation growth
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rose of Australia -->
+            <div class="portfolio-card fade-in-up">
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="video-wrapper">
+                            <div class="video-placeholder">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="portfolio-content">
+                            <span class="portfolio-tag">Hospitality</span>
+                            <h3 class="portfolio-title">Rose of Australia - Williamstown</h3>
+                            <p class="portfolio-brief">The Brief:</p>
+                            <p class="portfolio-text">"Capture the heart of community"</p>
+                            <p class="portfolio-brief">What We Delivered:</p>
+                            <p class="portfolio-text">Warmth and character that makes it the must-visit destination.</p>
+                            <div class="portfolio-response">
+                                <strong>Response:</strong> Outstanding footfall and event bookings
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Grid Section -->
+    <section class="video-grid-section">
+        <div class="container">
+            <h2 class="fade-in-up">See Our Work In Action</h2>
+            <div class="video-grid mt-5">
+                <div class="video-grid-item scale-in" style="animation-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800" alt="Real Estate">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">REAL ESTATE</div>
+                        <div class="video-title">Luxury Property Tour</div>
+                    </div>
+                </div>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?w=800" alt="Corporate">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">CORPORATE</div>
+                        <div class="video-title">Brand Story</div>
+                    </div>
+                </div>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800" alt="Healthcare">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">HEALTHCARE</div>
+                        <div class="video-title">Medical Excellence</div>
+                    </div>
+                </div>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.4s;">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800" alt="Food">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">HOSPITALITY</div>
+                        <div class="video-title">Restaurant Promo</div>
+                    </div>
+                </div>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.5s;">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800" alt="Retail">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">E-COMMERCE</div>
+                        <div class="video-title">Product Launch</div>
+                    </div>
+                </div>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.6s;">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" alt="Tech">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">TECHNOLOGY</div>
+                        <div class="video-title">SaaS Demo</div>
+                    </div>
+                </div>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.7s;">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800" alt="Fashion">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">FASHION</div>
+                        <div class="video-title">Brand Campaign</div>
+                    </div>
+                </div>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.8s;">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800" alt="Office">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">CORPORATE</div>
+                        <div class="video-title">Culture Video</div>
+                    </div>
+                </div>
+                <div class="video-grid-item scale-in" style="animation-delay: 0.9s;">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800" alt="Event">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                    <div class="video-grid-overlay">
+                        <div class="video-category">EVENTS</div>
+                        <div class="video-title">Event Highlights</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Services Section -->
     <section id="services" class="services-section">
-        <div class="container-fluid px-0">
-            <div class="section-header text-center mb-5 px-4">
-                <p class="section-label">OUR EXPERTISE</p>
-                <h2 class="section-title">What We Create</h2>
+        <div class="container">
+            <h2 class="section-title fade-in-up">What We Create</h2>
+            <p class="section-subtitle fade-in-up">Cinematic storytelling across every business need</p>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3 class="service-title">Brand Films</h3>
+                        <p class="portfolio-text">Emotionally charged storytelling that defines who you are</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="service-title">Product Launches</h3>
+                        <p class="portfolio-text">Crystal-clear explainers that make complexity simple</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="service-title">Leadership Content</h3>
+                        <p class="portfolio-text">CEO messages with gravitas and authenticity</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="service-title">Social Cinematics</h3>
+                        <p class="portfolio-text">Scroll-stopping content for Instagram, LinkedIn, TikTok</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="service-title">Corporate Identity</h3>
+                        <p class="portfolio-text">Culture films that unite teams and inspire stakeholders</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="service-title">Customer Stories</h3>
+                        <p class="portfolio-text">Testimonials that build trust and drive decisions</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="services-grid">
-                <div class="service-item">
-                    <video class="service-video" muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/853800/853800-hd_1920_1080_25fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="service-overlay">
-                        <i class="bi bi-film service-icon"></i>
-                        <h3>Brand Films</h3>
-                        <p>Emotionally charged storytelling</p>
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up" style="color: white;">Why Forward-Thinking Brands Choose Studio X AI
+            </h2>
+            <div class="row mt-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box fade-in-up">
+                        <div class="feature-number">10x</div>
+                        <h3 class="feature-title">Faster Delivery</h3>
+                        <p class="feature-text">No location scouts. No weather delays. 96 hours, not months.</p>
                     </div>
                 </div>
-
-                <div class="service-item">
-                    <video class="service-video" muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/3130284/3130284-hd_1920_1080_30fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="service-overlay">
-                        <i class="bi bi-rocket-takeoff service-icon"></i>
-                        <h3>Product Launches</h3>
-                        <p>Crystal-clear explainers</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box fade-in-up">
+                        <div class="feature-number">4K</div>
+                        <h3 class="feature-title">Cinematic Quality</h3>
+                        <p class="feature-text">4K visuals, Hollywood aesthetics at startup speed</p>
                     </div>
                 </div>
-
-                <div class="service-item">
-                    <video class="service-video" muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/8466636/8466636-hd_1920_1080_25fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="service-overlay">
-                        <i class="bi bi-person-lines-fill service-icon"></i>
-                        <h3>Leadership Content</h3>
-                        <p>CEO messages with gravitas</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box fade-in-up">
+                        <div class="feature-number">∞</div>
+                        <h3 class="feature-title">Infinitely Scalable</h3>
+                        <p class="feature-text">One video or one hundred—we grow with your ambition</p>
                     </div>
                 </div>
-
-                <div class="service-item">
-                    <video class="service-video" muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/3205916/3205916-hd_1920_1080_25fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="service-overlay">
-                        <i class="bi bi-phone service-icon"></i>
-                        <h3>Social Cinematics</h3>
-                        <p>Scroll-stopping content</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box fade-in-up">
+                        <i class="fas fa-brain" style="font-size: 3.5rem; color: #00d2ff; margin-bottom: 1rem;"></i>
+                        <h3 class="feature-title">AI Precision Meets Human Soul</h3>
+                        <p class="feature-text">Technology handles technical. Your vision drives the story.</p>
                     </div>
                 </div>
-
-                <div class="service-item">
-                    <video class="service-video" muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/4443688/4443688-hd_1920_1080_25fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="service-overlay">
-                        <i class="bi bi-building service-icon"></i>
-                        <h3>Corporate Identity</h3>
-                        <p>Culture films that unite teams</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box fade-in-up">
+                        <i class="fas fa-globe" style="font-size: 3.5rem; color: #00d2ff; margin-bottom: 1rem;"></i>
+                        <h3 class="feature-title">Global Reach</h3>
+                        <p class="feature-text">One video, multiple languages with natural lip-sync</p>
                     </div>
                 </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-box fade-in-up">
+                        <i class="fas fa-palette" style="font-size: 3.5rem; color: #00d2ff; margin-bottom: 1rem;"></i>
+                        <h3 class="feature-title">Brand Consistency</h3>
+                        <p class="feature-text">Every frame reflects your identity. Scale without diluting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="service-item">
-                    <video class="service-video" muted loop playsinline>
-                        <source src="https://videos.pexels.com/video-files/3130182/3130182-hd_1920_1080_30fps.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div class="service-overlay">
-                        <i class="bi bi-people service-icon"></i>
-                        <h3>Customer Stories</h3>
-                        <p>Testimonials that build trust</p>
+    <!-- Video Background Section -->
+    <section class="video-bg-section">
+        <video autoplay muted loop playsinline>
+            <source src="https://studioxai.com.au/assets/videos/yt.mp4" type="video/mp4">
+        </video>
+        <div class="container video-bg-content">
+            <h2 class="fade-in-up">Transform Your Brand with AI-Powered Video</h2>
+            <p class="fade-in-up">Experience the future of content creation where artificial intelligence meets creative
+                storytelling. We deliver cinematic quality at unprecedented speed.</p>
+            <a href="#contact" class="btn-primary-custom btn-lg fade-in-up">
+                Get Started Today <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Your 4-Day Journey</h2>
+            <p class="section-subtitle fade-in-up">From vision to viral in just 96 hours</p>
+
+            <div class="process-grid">
+                <div class="process-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="process-card-number">1</div>
+                    <h3 class="process-card-title">Share Your Vision</h3>
+                    <p class="process-card-desc">Tell your story, upload assets, approve script. No video expertise
+                        required.</p>
+                    <i class="fas fa-lightbulb process-card-icon"></i>
+                </div>
+
+                <div class="process-card fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="process-card-number">2</div>
+                    <h3 class="process-card-title">AI Brings It to Life</h3>
+                    <p class="process-card-desc">Real products meet AI characters. Visuals crafted to your brand.</p>
+                    <i class="fas fa-magic process-card-icon"></i>
+                </div>
+
+                <div class="process-card fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="process-card-number">3</div>
+                    <h3 class="process-card-title">Refine Together</h3>
+                    <p class="process-card-desc">Quick feedback cycles. Adjustments in hours.</p>
+                    <i class="fas fa-sync-alt process-card-icon"></i>
+                </div>
+
+                <div class="process-card fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="process-card-number">4</div>
+                    <h3 class="process-card-title">Launch Everywhere</h3>
+                    <p class="process-card-desc">Broadcast-ready for web, social, events—wherever your audience lives.
+                    </p>
+                    <i class="fas fa-rocket process-card-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="industries-section">
+        <div class="container industries-container">
+            <h2 class="section-title fade-in-up">Built For Every Ambition</h2>
+            <p class="section-subtitle fade-in-up">From startups to enterprises, we speak your industry's language</p>
+
+            <div class="industries-grid-new">
+                <div class="industry-card-new fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="industry-icon-new">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="industry-name-new">Real Estate & Construction</h3>
+                    <div class="industry-meta">
+                        <div>
+                            <p class="industry-for-new">Perfect For</p>
+                            <p class="industry-desc-new">Developers, builders, agents</p>
+                        </div>
+                    </div>
+                    <div class="industry-divider"></div>
+                    <p class="industry-benefit-new">
+                        <i class="fas fa-check-circle"></i>
+                        Emotional home stories that close deals
+                    </p>
+                </div>
+
+                <div class="industry-card-new fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="industry-icon-new">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="industry-name-new">Healthcare & Medical</h3>
+                    <div class="industry-meta">
+                        <div>
+                            <p class="industry-for-new">Perfect For</p>
+                            <p class="industry-desc-new">Clinics, specialists, wellness</p>
+                        </div>
+                    </div>
+                    <div class="industry-divider"></div>
+                    <p class="industry-benefit-new">
+                        <i class="fas fa-check-circle"></i>
+                        Trust and authority before first consultation
+                    </p>
+                </div>
+
+                <div class="industry-card-new fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="industry-icon-new">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3 class="industry-name-new">Hospitality & Tourism</h3>
+                    <div class="industry-meta">
+                        <div>
+                            <p class="industry-for-new">Perfect For</p>
+                            <p class="industry-desc-new">Hotels, restaurants, venues</p>
+                        </div>
+                    </div>
+                    <div class="industry-divider"></div>
+                    <p class="industry-benefit-new">
+                        <i class="fas fa-check-circle"></i>
+                        Experiences viewers can taste and feel
+                    </p>
+                </div>
+
+                <div class="industry-card-new fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="industry-icon-new">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="industry-name-new">Professional Services</h3>
+                    <div class="industry-meta">
+                        <div>
+                            <p class="industry-for-new">Perfect For</p>
+                            <p class="industry-desc-new">Law, finance, consulting</p>
+                        </div>
+                    </div>
+                    <div class="industry-divider"></div>
+                    <p class="industry-benefit-new">
+                        <i class="fas fa-check-circle"></i>
+                        Credibility and expertise visualized
+                    </p>
+                </div>
+
+                <div class="industry-card-new fade-in-up" style="animation-delay: 0.5s;">
+                    <div class="industry-icon-new">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="industry-name-new">E-commerce & Retail</h3>
+                    <div class="industry-meta">
+                        <div>
+                            <p class="industry-for-new">Perfect For</p>
+                            <p class="industry-desc-new">Fashion, beauty, lifestyle</p>
+                        </div>
+                    </div>
+                    <div class="industry-divider"></div>
+                    <p class="industry-benefit-new">
+                        <i class="fas fa-check-circle"></i>
+                        Product transformations that convert
+                    </p>
+                </div>
+
+                <div class="industry-card-new fade-in-up" style="animation-delay: 0.7s;">
+                    <div class="industry-icon-new">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="industry-name-new">Education & Training</h3>
+                    <div class="industry-meta">
+                        <div>
+                            <p class="industry-for-new">Perfect For</p>
+                            <p class="industry-desc-new">Schools, courses, coaching</p>
+                        </div>
+                    </div>
+                    <div class="industry-divider"></div>
+                    <p class="industry-benefit-new">
+                        <i class="fas fa-check-circle"></i>
+                        Learning that actually engages
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Client Voices</h2>
+            <p class="section-subtitle fade-in-up">What brands are saying about working with us</p>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="testimonial-card fade-in-up">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"They transformed our 3D designs into desire."</p>
+                        <p class="testimonial-author">— The Marque Club</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card fade-in-up">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Our pub's soul captured perfectly—now we're Williamstown's
+                            heartbeat."</p>
+                        <p class="testimonial-author">— Rose of Australia</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card fade-in-up">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Surgical precision, cinematically captured."</p>
+                        <p class="testimonial-author">— Clinic Golden Proportions</p>
                     </div>
                 </div>
             </div>
@@ -277,42 +1692,63 @@
 
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
-        <video class="cta-video" autoplay muted loop playsinline>
-            <source src="https://videos.pexels.com/video-files/3129957/3129957-hd_1920_1080_25fps.mp4" type="video/mp4">
-        </video>
-        <div class="cta-overlay"></div>
-        <div class="cta-content">
-            <h2 class="cta-title">Create Stories That Move Your Audience</h2>
-            <p class="cta-subtitle">Your brand deserves to be seen. And remembered.</p>
-            <div class="cta-actions">
-                <a href="#" class="btn btn-cta-primary">Start Your Project</a>
-                <a href="#" class="btn btn-cta-secondary">Book Strategy Call</a>
+        <div class="container cta-content">
+            <h2 class="fade-in-up">Create Stories That Move Your Audience</h2>
+            <p class="fade-in-up">Whether building brand awareness, launching products, or educating customers—Studio X
+                AI gives you the creative power of a full production house with AI efficiency.</p>
+            <p class="fade-in-up" style="font-size: 1.5rem; font-weight: 700;">Your brand deserves to be seen. And
+                remembered.</p>
+            <div class="mt-5 fade-in-up">
+                <a href="#" class="btn-primary-custom btn-lg me-3">
+                    Start Your Project <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+                <a href="#" class="btn-outline-custom btn-lg">
+                    <i class="fas fa-calendar-alt me-2"></i> Book Strategy Call
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Video hover play/pause
-        document.querySelectorAll('.video-grid-item, .service-item').forEach(item => {
-            const video = item.querySelector('video');
-            if (video) {
-                item.addEventListener('mouseenter', () => video.play());
-                item.addEventListener('mouseleave', () => video.pause());
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                    }, index * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up, .scale-in').forEach((el) => {
+            el.style.opacity = '0';
+            if (el.classList.contains('fade-in-up')) {
+                el.style.transform = 'translateY(50px)';
+            } else {
+                el.style.transform = 'scale(0.9)';
             }
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
         });
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.classList.add('scrolled');
             } else {
-                navbar.style.background = 'transparent';
+                navbar.classList.remove('scrolled');
             }
         });
 
@@ -324,6 +1760,16 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
+            });
+        });
+
+        // Video placeholder interaction
+        document.querySelectorAll('.video-placeholder').forEach(placeholder => {
+            placeholder.addEventListener('click', function () {
+                this.style.opacity = '0';
+                setTimeout(() => {
+                    this.style.display = 'none';
+                }, 300);
             });
         });
     </script>
