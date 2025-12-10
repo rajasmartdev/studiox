@@ -1266,6 +1266,60 @@
             }
         }
 
+        /* Services Section */
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: transparent;
+            /* Matches body black background */
+        }
+
+        .service-card {
+            background: #111111;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s;
+            border: 1px solid #333;
+            height: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #ffffff;
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.05);
+            background: #1a1a1a;
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: #00d2ff;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: #000000;
+            transition: all 0.4s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(360deg);
+            background: #000000;
+            color: #00d2ff;
+            border: 1px solid #00d2ff;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
         /* Industries Visual Grid - Refined Match */
         .industries-visual-section {
             padding: 100px 0;
@@ -1679,8 +1733,8 @@
 
 
     <!-- Services Section - Split Screen Layout Matching Reference -->
-    <section id="services" class="services-visual-section">
-        <!-- Service 1: Brand Films -->
+    <!-- <section id="services" class="services-visual-section">
+        
         <div class="split-section">
             <div class="split-image">
                 <img src="https://images.pexels.com/photos/2533318/pexels-photo-2533318.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -1705,7 +1759,7 @@
             </div>
         </div>
 
-        <!-- Service 2: Product Launches -->
+        
         <div class="split-section reverse">
             <div class="split-image">
                 <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -1729,7 +1783,7 @@
             </div>
         </div>
 
-        <!-- Service 3: Leadership Content -->
+
         <div class="split-section">
             <div class="split-image">
                 <img src="https://images.pexels.com/photos/1181655/pexels-photo-1181655.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -1753,7 +1807,7 @@
             </div>
         </div>
 
-        <!-- Service 4: Social Cinematics -->
+
         <div class="split-section reverse">
             <div class="split-image">
                 <img src="https://images.pexels.com/photos/5077047/pexels-photo-5077047.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -1776,7 +1830,7 @@
             </div>
         </div>
 
-        <!-- Service 5: Corporate Identity -->
+        
         <div class="split-section">
             <div class="split-image">
                 <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -1800,7 +1854,7 @@
             </div>
         </div>
 
-        <!-- Service 6: Customer Stories -->
+       
         <div class="split-section reverse">
             <div class="split-image">
                 <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -1822,10 +1876,72 @@
                 </div>
             </div>
         </div>
+    </section> -->
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">What We Create</h2>
+            <p class="section-subtitle fade-in-up">Cinematic storytelling across every business need</p>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3 class="service-title">Brand Films</h3>
+                        <p class="portfolio-text">Emotionally charged storytelling that defines who you are</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="service-title">Product Launches</h3>
+                        <p class="portfolio-text">Crystal-clear explainers that make complexity simple</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="service-title">Leadership Content</h3>
+                        <p class="portfolio-text">CEO messages with gravitas and authenticity</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="service-title">Social Cinematics</h3>
+                        <p class="portfolio-text">Scroll-stopping content for Instagram, LinkedIn, TikTok</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="service-title">Corporate Identity</h3>
+                        <p class="portfolio-text">Culture films that unite teams and inspire stakeholders</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="service-title">Customer Stories</h3>
+                        <p class="portfolio-text">Testimonials that build trust and drive decisions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-
-
-
 
 
     <!-- Process Section -->
