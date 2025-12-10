@@ -1309,7 +1309,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%) brightness(0.8) contrast(1.1);
+            /* Removed grayscale filter for full color display */
             transition: all 0.5s ease;
         }
 
@@ -1528,7 +1528,7 @@
         </div>
     </section>
 
-     <!-- Video Background Section -->
+    <!-- Video Background Section -->
     <section class="video-bg-section">
         <video autoplay muted loop playsinline>
             <source src="https://studioxai.com.au/assets/videos/yt.mp4" type="video/mp4">
@@ -1676,111 +1676,157 @@
         </div>
     </section>
 
-    
+
 
     <!-- Services Section - Split Screen Layout Matching Reference -->
     <section id="services" class="services-visual-section">
-        <!-- Service 1: Brand Video Production -->
+        <!-- Service 1: Brand Films -->
         <div class="split-section">
             <div class="split-image">
                 <img src="https://images.pexels.com/photos/2533318/pexels-photo-2533318.jpeg?auto=compress&cs=tinysrgb&w=1920"
-                    alt="Brand Video Production">
+                    alt="Brand Films">
                 <div class="image-overlay"></div>
             </div>
             <div class="split-content">
                 <div class="split-content-inner">
-                    <p class="split-label">CINEMATIC, AI-ENHANCED VIDEO THAT SELLS</p>
-                    <h2 class="split-title">Brand Video Production</h2>
-                    <p class="split-desc">Cinematic, story-driven films that captivate audiences. Perfect for launches,
-                        about us, and high-performance ads.</p>
+                    <p class="split-label">CINEMATIC STORYTELLING</p>
+                    <h2 class="split-title">Brand Films</h2>
+                    <p class="split-desc">Emotionally charged storytelling that defines who you are. We craft narratives
+                        that resonate deeply with your audience and build lasting brand equity.</p>
                     <ul class="service-list">
-                        <li><i class="fas fa-check"></i> Concept Development</li>
-                        <li><i class="fas fa-check"></i> Scriptwriting</li>
-                        <li><i class="fas fa-check"></i> Professional Voiceovers</li>
-                        <li><i class="fas fa-check"></i> 4K Visual Delivery</li>
+                        <li><i class="fas fa-check"></i> Narrative Development</li>
+                        <li><i class="fas fa-check"></i> High-End Cinematography</li>
+                        <li><i class="fas fa-check"></i> Emotional Sound Design</li>
+                        <li><i class="fas fa-check"></i> Color Grading</li>
                     </ul>
-                    <a href="#contact" class="btn-outline-custom">VIEW BRAND VIDEOS <i
+                    <a href="#contact" class="btn-outline-custom">VIEW BRAND FILMS <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
 
-        <!-- Service 2: YouTube Video Production -->
+        <!-- Service 2: Product Launches -->
         <div class="split-section reverse">
             <div class="split-image">
-                <img src="https://images.pexels.com/photos/2510428/pexels-photo-2510428.jpeg?auto=compress&cs=tinysrgb&w=1920"
-                    alt="YouTube Video Production">
+                <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                    alt="Product Launches">
                 <div class="image-overlay"></div>
             </div>
             <div class="split-content">
                 <div class="split-content-inner">
-                    <h2 class="split-title">YouTube Video Production</h2>
-                    <p class="split-desc">Character-driven storytelling that builds loyal subscribers. High-retention
-                        edits and algorithm-friendly formats.</p>
+                    <h2 class="split-title">Product Launches</h2>
+                    <p class="split-desc">Crystal-clear explainers that make complexity simple. Showcase features and
+                        benefits with precision to drive adoption and sales.</p>
                     <ul class="service-list">
-                        <li><i class="fas fa-check"></i> Video Management</li>
-                        <li><i class="fas fa-check"></i> SEO Titles</li>
-                        <li><i class="fas fa-check"></i> Thumbnail Design</li>
-                        <li><i class="fas fa-check"></i> Audience Growth</li>
+                        <li><i class="fas fa-check"></i> 3D Visualization</li>
+                        <li><i class="fas fa-check"></i> Feature Breakdown</li>
+                        <li><i class="fas fa-check"></i> Demo Flows</li>
+                        <li><i class="fas fa-check"></i> Launch Assets</li>
                     </ul>
-                    <a href="#contact" class="btn-outline-custom">SEE YOUTUBE WORK <i
+                    <a href="#contact" class="btn-outline-custom">LAUNCH YOUR PRODUCT <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
 
-        <!-- Service 3: AI Avatar Creation -->
+        <!-- Service 3: Leadership Content -->
         <div class="split-section">
             <div class="split-image">
-                <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1920"
-                    alt="AI Avatar Creation">
+                <img src="https://images.pexels.com/photos/1181655/pexels-photo-1181655.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                    alt="Leadership Content">
                 <div class="image-overlay"></div>
             </div>
             <div class="split-content">
                 <div class="split-content-inner">
-                    <h2 class="split-title">AI Avatar Creation</h2>
-                    <p class="split-desc">Custom realistic avatars representing your brand, available 24/7. Scale your
-                        presence without being on camera.</p>
+                    <h2 class="split-title">Leadership Content</h2>
+                    <p class="split-desc">CEO messages with gravitas and authenticity. Position your leadership team as
+                        industry authorities with polished, professional video content.</p>
                     <ul class="service-list">
-                        <li><i class="fas fa-check"></i> Custom Avatar Design</li>
-                        <li><i class="fas fa-check"></i> Natural Lip-Sync</li>
-                        <li><i class="fas fa-check"></i> Multi-Language</li>
-                        <li><i class="fas fa-check"></i> Instant Generation</li>
+                        <li><i class="fas fa-check"></i> Executive Interviews</li>
+                        <li><i class="fas fa-check"></i> Thought Leadership</li>
+                        <li><i class="fas fa-check"></i> Keynote Recording</li>
+                        <li><i class="fas fa-check"></i> Internal Comms</li>
                     </ul>
-                    <a href="#contact" class="btn-outline-custom">CREATE YOUR AVATAR <i
+                    <a href="#contact" class="btn-outline-custom">ELEVATE LEADERSHIP <i
                             class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
 
-        <!-- Service 4: Learning Video Production -->
+        <!-- Service 4: Social Cinematics -->
         <div class="split-section reverse">
             <div class="split-image">
-                <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=1920"
-                    alt="Learning Video Production">
+                <img src="https://images.pexels.com/photos/5077047/pexels-photo-5077047.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                    alt="Social Cinematics">
                 <div class="image-overlay"></div>
             </div>
             <div class="split-content">
                 <div class="split-content-inner">
-                    <h2 class="split-title">Learning Video Production</h2>
-                    <p class="split-desc">Refine complex topics into engaging training experiences for e-learning and
-                        corporate training.</p>
+                    <h2 class="split-title">Social Cinematics</h2>
+                    <p class="split-desc">Scroll-stopping content for Instagram, LinkedIn, and TikTok. High-impact
+                        visuals designed to capture attention in the first second.</p>
                     <ul class="service-list">
-                        <li><i class="fas fa-check"></i> Course Structuring</li>
-                        <li><i class="fas fa-check"></i> Visual Overlays</li>
-                        <li><i class="fas fa-check"></i> Scalable Updates</li>
-                        <li><i class="fas fa-check"></i> Global Engagement</li>
+                        <li><i class="fas fa-check"></i> Vertical Formatting</li>
+                        <li><i class="fas fa-check"></i> Trend Alignment</li>
+                        <li><i class="fas fa-check"></i> Fast-Paced Edits</li>
+                        <li><i class="fas fa-check"></i> Platform Optimization</li>
                     </ul>
-                    <a href="#contact" class="btn-outline-custom">TEACH WITH VIDEO <i
+                    <a href="#contact" class="btn-outline-custom">GO VIRAL <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 5: Corporate Identity -->
+        <div class="split-section">
+            <div class="split-image">
+                <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                    alt="Corporate Identity">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="split-content">
+                <div class="split-content-inner">
+                    <h2 class="split-title">Corporate Identity</h2>
+                    <p class="split-desc">Culture films that unite teams and inspire stakeholders. Communicate your
+                        company values and vision with clarity and passion.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Culture Videos</li>
+                        <li><i class="fas fa-check"></i> Recruitment Films</li>
+                        <li><i class="fas fa-check"></i> ESG Reporting</li>
+                        <li><i class="fas fa-check"></i> Annual Reviews</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline-custom">DEFINE YOUR CULTURE <i
                             class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 6: Customer Stories -->
+        <div class="split-section reverse">
+            <div class="split-image">
+                <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                    alt="Customer Stories">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="split-content">
+                <div class="split-content-inner">
+                    <h2 class="split-title">Customer Stories</h2>
+                    <p class="split-desc">Testimonials that build trust and drive decisions. Let your happy customers do
+                        the selling with authentic, high-quality interview content.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Case Study Films</li>
+                        <li><i class="fas fa-check"></i> Client Interviews</li>
+                        <li><i class="fas fa-check"></i> Success Stories</li>
+                        <li><i class="fas fa-check"></i> ROI Breakdowns</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline-custom">BUILD TRUST <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    
 
-   
+
+
 
     <!-- Process Section -->
     <section id="process" class="process-section">
