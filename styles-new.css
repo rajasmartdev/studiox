@@ -1,0 +1,609 @@
+/* ===================================
+   Studio X - Modern Video-First Design
+   =================================== */
+
+/* ===================================
+   CSS Variables
+   =================================== */
+:root {
+    --primary-cyan: #00f2ff;
+    --primary-purple: #7000ff;
+    --accent-pink: #ff0055;
+    --bg-dark: #000000;
+    --text-white: #ffffff;
+    --text-gray: #cccccc;
+    --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===================================
+   Global Styles
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    color: var(--text-white);
+    background: var(--bg-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ===================================
+   Navigation
+   =================================== */
+.navbar {
+    padding: 1.5rem 0;
+    transition: all var(--transition);
+    background: transparent;
+    z-index: 1000;
+}
+
+.brand-text {
+    background: linear-gradient(135deg, #ffffff 0%, var(--primary-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-link {
+    color: var(--text-gray) !important;
+    font-weight: 500;
+    transition: all var(--transition);
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+    color: var(--primary-cyan) !important;
+}
+
+.btn-primary-custom {
+    background: transparent;
+    border: 2px solid var(--primary-cyan);
+    color: var(--primary-cyan);
+    font-weight: 600;
+    transition: all var(--transition);
+}
+
+.btn-primary-custom:hover {
+    background: var(--primary-cyan);
+    color: #000;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+}
+
+/* ===================================
+   Hero Section - Full Screen
+   =================================== */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title .highlight {
+    background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: var(--text-gray);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+    padding: 1rem 2.5rem;
+    background: var(--primary-cyan);
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all var(--transition);
+    text-decoration: none;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px rgba(0, 242, 255, 0.4);
+    color: #000;
+}
+
+.btn-hero-secondary {
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--text-white);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all var(--transition);
+    text-decoration: none;
+}
+
+.btn-hero-secondary:hover {
+    border-color: var(--text-white);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator i {
+    font-size: 2rem;
+    color: var(--primary-cyan);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ===================================
+   Section Headers
+   =================================== */
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--primary-cyan);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+/* ===================================
+   Works Section - Video Grid
+   =================================== */
+.works-section {
+    padding: 8rem 0;
+    background: var(--bg-dark);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.video-grid-item {
+    position: relative;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.video-grid-item.large {
+    grid-column: span 2;
+    height: 600px;
+}
+
+.grid-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all var(--transition);
+}
+
+.video-grid-item:hover .grid-video {
+    transform: scale(1.05);
+}
+
+.grid-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all var(--transition);
+}
+
+.video-grid-item:hover .grid-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-cyan);
+    color: #000;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.project-result {
+    color: var(--text-gray);
+    font-size: 1rem;
+}
+
+.project-result i {
+    color: var(--primary-cyan);
+    margin-right: 0.5rem;
+}
+
+/* ===================================
+   Process Section - Horizontal Scroll
+   =================================== */
+.process-section {
+    padding: 8rem 0;
+    background: #0a0a0a;
+}
+
+.process-scroll {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 2rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.process-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.process-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.process-scroll::-webkit-scrollbar-thumb {
+    background: var(--primary-cyan);
+    border-radius: 10px;
+}
+
+.process-card {
+    position: relative;
+    min-width: 450px;
+    height: 550px;
+    border-radius: 20px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    transition: all var(--transition);
+}
+
+.process-card:hover {
+    transform: translateY(-10px);
+}
+
+.process-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.process-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.3) 100%);
+}
+
+.process-number {
+    display: block;
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.process-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.process-content p {
+    color: var(--text-gray);
+    font-size: 1rem;
+}
+
+/* ===================================
+   Services Section - Grid
+   =================================== */
+.services-section {
+    padding: 8rem 0;
+    background: var(--bg-dark);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 0;
+}
+
+.service-item {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.service-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all var(--transition);
+}
+
+.service-item:hover .service-video {
+    transform: scale(1.1);
+}
+
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    transition: all var(--transition);
+}
+
+.service-item:hover .service-overlay {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--primary-cyan);
+    margin-bottom: 1.5rem;
+}
+
+.service-overlay h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.service-overlay p {
+    color: var(--text-gray);
+    font-size: 1rem;
+}
+
+/* ===================================
+   CTA Section
+   =================================== */
+.cta-section {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cta-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.cta-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.cta-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-gray);
+    margin-bottom: 2.5rem;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta-primary {
+    padding: 1rem 2.5rem;
+    background: var(--primary-cyan);
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all var(--transition);
+    text-decoration: none;
+}
+
+.btn-cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px rgba(0, 242, 255, 0.4);
+    color: #000;
+}
+
+.btn-cta-secondary {
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--text-white);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all var(--transition);
+    text-decoration: none;
+}
+
+.btn-cta-secondary:hover {
+    border-color: var(--text-white);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 1200px) {
+    .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    
+    .video-grid-item.large {
+        grid-column: span 1;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-grid-item,
+    .video-grid-item.large {
+        height: 400px;
+    }
+    
+    .process-card {
+        min-width: 350px;
+        height: 450px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-item {
+        height: 400px;
+    }
+    
+    .hero-actions,
+    .cta-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-hero-primary,
+    .btn-hero-secondary,
+    .btn-cta-primary,
+    .btn-cta-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+}

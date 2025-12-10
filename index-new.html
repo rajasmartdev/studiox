@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio X - AI-Enhanced Cinematic Video</title>
+    <meta name="description" content="Studio X - Premium AI filmmaking that turns browsers into buyers.">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles-new.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand fw-bold fs-4" href="#">
+                <span class="brand-text">STUDIO X</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#works">Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary-custom px-4 py-2" href="#contact">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Full Screen Video -->
+    <section id="hero" class="hero-section">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Your Brand's Blockbuster<br>in <span class="highlight">96 Hours</span></h1>
+            <p class="hero-subtitle">Premium AI filmmaking that turns browsers into buyers</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-hero-primary">Start Creating</a>
+                <a href="#works" class="btn btn-hero-secondary">Watch Our Work</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="bi bi-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Selected Works - Video Grid -->
+    <section id="works" class="works-section">
+        <div class="container-fluid px-4">
+            <div class="section-header text-center mb-5">
+                <p class="section-label">PORTFOLIO</p>
+                <h2 class="section-title">We Build Brand Connections</h2>
+            </div>
+
+            <div class="video-grid">
+                <!-- Project 1 -->
+                <div class="video-grid-item large">
+                    <video class="grid-video" muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/853800/853800-hd_1920_1080_25fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="grid-overlay">
+                        <span class="project-tag">Real Estate</span>
+                        <h3 class="project-title">Valley Homes</h3>
+                        <p class="project-result"><i class="bi bi-graph-up-arrow"></i> 50% higher engagement</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="video-grid-item">
+                    <video class="grid-video" muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/3130182/3130182-hd_1920_1080_30fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="grid-overlay">
+                        <span class="project-tag">Luxury</span>
+                        <h3 class="project-title">The Marque Club</h3>
+                        <p class="project-result"><i class="bi bi-check-circle-fill"></i> Full waitlist pre-launch</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="video-grid-item">
+                    <video class="grid-video" muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/5473806/5473806-hd_1920_1080_30fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="grid-overlay">
+                        <span class="project-tag">Medical</span>
+                        <h3 class="project-title">Clinic Golden Proportions</h3>
+                        <p class="project-result"><i class="bi bi-people-fill"></i> Consultation growth</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="video-grid-item large">
+                    <video class="grid-video" muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/3205916/3205916-hd_1920_1080_25fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="grid-overlay">
+                        <span class="project-tag">Hospitality</span>
+                        <h3 class="project-title">Rose of Australia</h3>
+                        <p class="project-result"><i class="bi bi-star-fill"></i> Outstanding footfall</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works - Horizontal Scroll -->
+    <section id="process" class="process-section">
+        <div class="container-fluid px-4">
+            <div class="section-header text-center mb-5">
+                <p class="section-label">WORKFLOW</p>
+                <h2 class="section-title">Your 4-Day Journey</h2>
+            </div>
+
+            <div class="process-scroll">
+                <div class="process-card">
+                    <video class="process-video" autoplay muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/3196344/3196344-hd_1920_1080_25fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="process-content">
+                        <span class="process-number">01</span>
+                        <h3>Share Your Vision</h3>
+                        <p>Tell your story, upload assets, approve script</p>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <video class="process-video" autoplay muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/3130284/3130284-hd_1920_1080_30fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="process-content">
+                        <span class="process-number">02</span>
+                        <h3>AI Brings It to Life</h3>
+                        <p>Real products meet AI characters</p>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <video class="process-video" autoplay muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/4443688/4443688-hd_1920_1080_25fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="process-content">
+                        <span class="process-number">03</span>
+                        <h3>Refine Together</h3>
+                        <p>Quick feedback cycles in hours</p>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <video class="process-video" autoplay muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/3130182/3130182-hd_1920_1080_30fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="process-content">
+                        <span class="process-number">04</span>
+                        <h3>Launch Everywhere</h3>
+                        <p>Broadcast-ready for all platforms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services - Split Screen Videos -->
+    <section id="services" class="services-section">
+        <div class="container-fluid px-0">
+            <div class="section-header text-center mb-5 px-4">
+                <p class="section-label">OUR EXPERTISE</p>
+                <h2 class="section-title">What We Create</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-item">
+                    <video class="service-video" muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/853800/853800-hd_1920_1080_25fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="service-overlay">
+                        <i class="bi bi-film service-icon"></i>
+                        <h3>Brand Films</h3>
+                        <p>Emotionally charged storytelling</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <video class="service-video" muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/3130284/3130284-hd_1920_1080_30fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="service-overlay">
+                        <i class="bi bi-rocket-takeoff service-icon"></i>
+                        <h3>Product Launches</h3>
+                        <p>Crystal-clear explainers</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <video class="service-video" muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/8466636/8466636-hd_1920_1080_25fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="service-overlay">
+                        <i class="bi bi-person-lines-fill service-icon"></i>
+                        <h3>Leadership Content</h3>
+                        <p>CEO messages with gravitas</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <video class="service-video" muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/3205916/3205916-hd_1920_1080_25fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="service-overlay">
+                        <i class="bi bi-phone service-icon"></i>
+                        <h3>Social Cinematics</h3>
+                        <p>Scroll-stopping content</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <video class="service-video" muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/4443688/4443688-hd_1920_1080_25fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="service-overlay">
+                        <i class="bi bi-building service-icon"></i>
+                        <h3>Corporate Identity</h3>
+                        <p>Culture films that unite teams</p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <video class="service-video" muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/3130182/3130182-hd_1920_1080_30fps.mp4"
+                            type="video/mp4">
+                    </video>
+                    <div class="service-overlay">
+                        <i class="bi bi-people service-icon"></i>
+                        <h3>Customer Stories</h3>
+                        <p>Testimonials that build trust</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <video class="cta-video" autoplay muted loop playsinline>
+            <source src="https://videos.pexels.com/video-files/3129957/3129957-hd_1920_1080_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+            <h2 class="cta-title">Create Stories That Move Your Audience</h2>
+            <p class="cta-subtitle">Your brand deserves to be seen. And remembered.</p>
+            <div class="cta-actions">
+                <a href="#" class="btn btn-cta-primary">Start Your Project</a>
+                <a href="#" class="btn btn-cta-secondary">Book Strategy Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Video hover play/pause
+        document.querySelectorAll('.video-grid-item, .service-item').forEach(item => {
+            const video = item.querySelector('video');
+            if (video) {
+                item.addEventListener('mouseenter', () => video.play());
+                item.addEventListener('mouseleave', () => video.pause());
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            } else {
+                navbar.style.background = 'transparent';
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

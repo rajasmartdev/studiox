@@ -249,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     border-radius: var(--radius-lg);
     height: 100%;
-    min-height: 300px;
+    min-height: 400px; /* Increased from 300px */
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all var(--transition-base);
 }
@@ -267,13 +267,13 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5;
-    transition: opacity var(--transition-base);
+    opacity: 0.9; /* Increased from 0.5 to make video much more visible */
+    transition: all var(--transition-base);
     z-index: 0;
 }
 
 .video-card:hover .video-card-bg {
-    opacity: 0.8;
+    opacity: 1; /* Full opacity on hover */
     transform: scale(1.05);
 }
 
@@ -281,12 +281,13 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     z-index: 1;
     padding: 2.5rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.2) 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%); /* Lighter gradient */
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
+
 
 /* ===================================
    Sections
@@ -526,6 +527,7 @@ section {
     animation: marquee 40s linear infinite;
 }
 
+
 /* Responsive */
 @media (max-width: 768px) {
     .display-1 {
@@ -536,8 +538,17 @@ section {
         padding: 1.5rem;
     }
     
+    .video-card {
+        min-height: 350px; /* Slightly smaller on mobile but still prominent */
+    }
+    
+    .video-card-content {
+        padding: 1.5rem;
+    }
+    
     .py-6 {
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
 }
+
