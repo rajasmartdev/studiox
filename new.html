@@ -438,8 +438,8 @@
 
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
+            height: 100%;
+            min-height: 400px;
             overflow: hidden;
             background: #000;
         }
@@ -465,7 +465,7 @@
         }
 
         .portfolio-content {
-            padding: 3rem;
+            padding: 1.2rem;
         }
 
         .portfolio-tag {
@@ -476,7 +476,7 @@
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .portfolio-title {
@@ -632,101 +632,238 @@
             transform: translateX(5px);
         }
 
-        /* Industries Visual Grid */
-        .industries-visual-section {
-            padding: 100px 0;
-            background: #000000;
+       .industries-section {
+            padding: 120px 20px;
+            position: relative;
         }
 
-        .industries-image-grid {
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .industries-header {
+            text-align: center;
+            margin-bottom: 80px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .industries-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .industries-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-top: 4rem;
+            gap: 30px;
+            perspective: 1000px;
         }
 
-        .industry-visual-card {
+        .industry-card {
             position: relative;
-            aspect-ratio: 16/9;
-            border-radius: 20px;
+            height: 450px;
+            border-radius: 24px;
             overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
 
-        .industry-visual-card img {
+        .industry-card:nth-child(1) { animation-delay: 0.1s; }
+        .industry-card:nth-child(2) { animation-delay: 0.2s; }
+        .industry-card:nth-child(3) { animation-delay: 0.3s; }
+        .industry-card:nth-child(4) { animation-delay: 0.4s; }
+        .industry-card:nth-child(5) { animation-delay: 0.5s; }
+        .industry-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .industry-card:hover {
+            transform: translateY(-15px) scale(1.02);
+        }
+
+        .industry-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            filter: brightness(0.7);
         }
 
-        .industry-visual-overlay {
+        .industry-card:hover .industry-image {
+            transform: scale(1.1);
+            filter: brightness(0.5);
+        }
+
+        .industry-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+            inset: 0;
+            background: linear-gradient(180deg, 
+                rgba(0,0,0,0.1) 0%, 
+                rgba(0,0,0,0.5) 50%,
+                rgba(0,0,0,0.9) 100%);
             display: flex;
             align-items: flex-end;
-            padding: 2rem;
-            transition: all 0.4s;
+            padding: 40px;
+            transition: background 0.4s ease;
         }
 
-        .industry-visual-content h3 {
-            color: white;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+        .industry-card:hover .industry-overlay {
+            background: linear-gradient(180deg, 
+                rgba(102,126,234,0.2) 0%, 
+                rgba(118,75,162,0.4) 50%,
+                rgba(0,0,0,0.95) 100%);
         }
 
-        .industry-visual-content p {
-            color: rgba(255, 255, 255, 0.8);
-            margin: 0;
-            font-size: 1.1rem;
-            opacity: 0.8;
-            transform: translateY(10px);
-            transition: all 0.4s;
+        .industry-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
         }
 
-        .industry-visual-card:hover img {
-            transform: scale(1.1);
+        .industry-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        .industry-visual-card:hover p {
+        .industry-card:hover .industry-icon {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .industry-visual-icon {
+        .industry-content h3 {
             font-size: 2rem;
-            color: #00d2ff;
-            margin-bottom: 1rem;
-            display: inline-block;
+            font-weight: 700;
+            margin-bottom: 12px;
+            transform: translateY(0);
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        /* Mobile adjustments */
-        @media (max-width: 992px) {
-            .split-section {
-                flex-direction: column !important;
-                min-height: auto;
+        .industry-card:hover .industry-content h3 {
+            transform: translateY(-5px);
+        }
+
+        .industry-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+            opacity: 1;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            transition-delay: 0.05s;
+        }
+
+        .industry-card:hover .industry-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .industry-arrow {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translate(10px, 10px);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            transition-delay: 0.1s;
+        }
+
+        .industry-card:hover .industry-arrow {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        .industry-arrow svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+            stroke-width: 2;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .industries-section {
+                padding: 80px 20px;
             }
 
-            .split-image {
-                height: 50vh;
-                min-height: 300px;
-            }
-
-            .split-content {
-                padding: 3rem 1.5rem;
-            }
-
-            .split-title {
-                font-size: 2.2rem;
-            }
-
-            .industries-image-grid {
+            .industries-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
+
+            .industry-card {
+                height: 400px;
+            }
+
+            .industry-overlay {
+                padding: 30px;
+            }
+
+            .industries-header {
+                margin-bottom: 50px;
+            }
+        }
+
+        /* Gradient background effect */
+        .industries-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(102,126,234,0.15) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
         }
 
         /* Features Section */
@@ -1409,6 +1546,107 @@
                 font-size: 2.5rem;
             }
         }
+
+        /* Industry Table Section */
+        .industry-table-section {
+            padding: 100px 0;
+            background: #0a0a0a;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .industry-table-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .industry-table {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .industry-table-header {
+            display: grid;
+            grid-template-columns: 2fr 2fr 3fr;
+            background: rgba(0, 210, 255, 0.1);
+            padding: 1.5rem 2rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #00d2ff;
+            border-bottom: 2px solid rgba(0, 210, 255, 0.3);
+        }
+
+        .industry-table-row {
+            display: grid;
+            grid-template-columns: 2fr 2fr 3fr;
+            padding: 1.8rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+
+        .industry-table-row:hover {
+            background: rgba(0, 210, 255, 0.05);
+            border-left: 3px solid #00d2ff;
+        }
+
+        .industry-table-row:last-child {
+            border-bottom: none;
+        }
+
+        .industry-name {
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 1.05rem;
+        }
+
+        .industry-for {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        .industry-benefit {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+
+            .industry-table-header,
+            .industry-table-row {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .industry-table-header {
+                display: none;
+            }
+
+            .industry-table-row {
+                padding: 1.5rem;
+            }
+
+            .industry-name::before {
+                content: "Industry: ";
+                color: #00d2ff;
+                font-weight: 600;
+            }
+
+            .industry-for::before {
+                content: "Perfect For: ";
+                color: #00d2ff;
+                font-weight: 600;
+            }
+
+            .industry-benefit::before {
+                content: "What You Get: ";
+                color: #00d2ff;
+                font-weight: 600;
+            }
+        }
     </style>
 </head>
 
@@ -1417,7 +1655,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="https://studioxai.com.au/assets/images/Studio%20X_Logo_Blue.png" alt="Studio X AI"
+                <img src="https://studioxai.com.au/assets/images/Studio%20X%20AI_Logo.png" alt="Studio X AI"
                     class="logo-img">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -1475,11 +1713,14 @@
 
             <!-- Valley Homes -->
             <div class="portfolio-card fade-in-up">
-                <div class="row g-0">
+                <div class="row g-0 align-items-stretch">
                     <div class="col-lg-6">
                         <div class="video-wrapper">
                             <div class="video-placeholder">
-                                <i class="fas fa-play-circle"></i>
+                                <iframe
+                                    src="https://www.youtube.com/embed/msfWpTJCqmA?autoplay=1&mute=1&loop=1&playlist=msfWpTJCqmA&controls=0&showinfo=0&rel=0"
+                                    style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 177.77%; height: 100%; min-width: 100%; min-height: 100%;"
+                                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -1502,7 +1743,7 @@
 
             <!-- The Marque Club -->
             <div class="portfolio-card fade-in-up">
-                <div class="row g-0">
+                <div class="row g-0 align-items-stretch">
                     <div class="col-lg-6 order-lg-2">
                         <div class="video-wrapper">
                             <div class="video-placeholder">
@@ -1529,7 +1770,7 @@
 
             <!-- Clinic Golden Proportions -->
             <div class="portfolio-card fade-in-up">
-                <div class="row g-0">
+                <div class="row g-0 align-items-stretch">
                     <div class="col-lg-6">
                         <div class="video-wrapper">
                             <div class="video-placeholder">
@@ -1556,11 +1797,14 @@
 
             <!-- Rose of Australia -->
             <div class="portfolio-card fade-in-up">
-                <div class="row g-0">
+                <div class="row g-0 align-items-stretch">
                     <div class="col-lg-6 order-lg-2">
                         <div class="video-wrapper">
                             <div class="video-placeholder">
-                                <i class="fas fa-play-circle"></i>
+                                <iframe
+                                    src="https://www.youtube.com/embed/irrEAkE2Aa4?autoplay=1&mute=1&loop=1&playlist=irrEAkE2Aa4&controls=0&showinfo=0&rel=0"
+                                    style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 177.77%; height: 100%; min-width: 100%; min-height: 100%;"
+                                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -1583,10 +1827,14 @@
     </section>
 
     <!-- Video Background Section -->
-    <section class="video-bg-section">
-        <video autoplay muted loop playsinline>
-            <source src="https://studioxai.com.au/assets/videos/yt.mp4" type="video/mp4">
-        </video>
+    <section class="video-bg-section" style="overflow: hidden; position: relative;">
+        <!-- YouTube Background Video -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+            <iframe
+                src="https://www.youtube.com/embed/Wk3fGoVxGpM?autoplay=1&mute=1&loop=1&playlist=Wk3fGoVxGpM&controls=0&showinfo=0&rel=0&disablekb=1&iv_load_policy=3"
+                style="width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 0;"
+                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
         <div class="container video-bg-content">
             <h2 class="fade-in-up">Transform Your Brand with AI-Powered Video</h2>
             <p class="fade-in-up">Experience the future of content creation where artificial intelligence meets creative
@@ -1985,75 +2233,118 @@
     </section>
 
     <!-- Industries Section - Image Grid Matching Reference "Crafted for businesses" -->
-    <section id="industries" class="industries-visual-section">
+        <section class="industries-section">
         <div class="container">
-            <div class="industries-header fade-in-up">
+            <div class="industries-header">
                 <h2>Crafted for businesses<br>where clarity <span class="highlight">drives growth.</span></h2>
             </div>
 
-            <div class="industries-image-grid">
-                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.1s;">
+            <div class="industries-grid">
+                <div class="industry-card">
                     <img src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Strategy">
-                    <div class="industry-visual-overlay">
-                        <div class="industry-visual-content">
+                        alt="Strategy" class="industry-image">
+                    <div class="industry-overlay">
+                        <div class="industry-content">
+                            <div class="industry-icon">📊</div>
                             <h3>Strategy</h3>
+                            <p class="industry-description">Transform vision into actionable roadmaps that align teams and accelerate business outcomes.</p>
+                        </div>
+                        <div class="industry-arrow">
+                            <svg fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
                         </div>
                     </div>
                 </div>
 
-                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.2s;">
+                <div class="industry-card">
                     <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Leadership">
-                    <div class="industry-visual-overlay">
-                        <div class="industry-visual-content">
+                        alt="Leadership" class="industry-image">
+                    <div class="industry-overlay">
+                        <div class="industry-content">
+                            <div class="industry-icon">🎯</div>
                             <h3>Leadership</h3>
+                            <p class="industry-description">Empower leaders with insights and tools to drive organizational excellence and inspire teams.</p>
+                        </div>
+                        <div class="industry-arrow">
+                            <svg fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
                         </div>
                     </div>
                 </div>
 
-                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.3s;">
+                <div class="industry-card">
                     <img src="https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Innovation">
-                    <div class="industry-visual-overlay">
-                        <div class="industry-visual-content">
+                        alt="Innovation" class="industry-image">
+                    <div class="industry-overlay">
+                        <div class="industry-content">
+                            <div class="industry-icon">💡</div>
                             <h3>Innovation</h3>
+                            <p class="industry-description">Foster creativity and breakthrough thinking that keeps your business ahead of the curve.</p>
+                        </div>
+                        <div class="industry-arrow">
+                            <svg fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
                         </div>
                     </div>
                 </div>
 
-                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.4s;">
+                <div class="industry-card">
                     <img src="https://images.pexels.com/photos/1181438/pexels-photo-1181438.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Technology">
-                    <div class="industry-visual-overlay">
-                        <div class="industry-visual-content">
+                        alt="Technology" class="industry-image">
+                    <div class="industry-overlay">
+                        <div class="industry-content">
+                            <div class="industry-icon">⚡</div>
                             <h3>Technology</h3>
+                            <p class="industry-description">Leverage cutting-edge solutions to streamline operations and unlock new possibilities.</p>
+                        </div>
+                        <div class="industry-arrow">
+                            <svg fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
                         </div>
                     </div>
                 </div>
 
-                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.5s;">
+                <div class="industry-card">
                     <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Collaboration">
-                    <div class="industry-visual-overlay">
-                        <div class="industry-visual-content">
+                        alt="Collaboration" class="industry-image">
+                    <div class="industry-overlay">
+                        <div class="industry-content">
+                            <div class="industry-icon">🤝</div>
                             <h3>Collaboration</h3>
+                            <p class="industry-description">Build cohesive teams that work seamlessly together toward shared goals and success.</p>
+                        </div>
+                        <div class="industry-arrow">
+                            <svg fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
                         </div>
                     </div>
                 </div>
 
-                <div class="industry-visual-card fade-in-up" style="animation-delay: 0.6s;">
+                <div class="industry-card">
                     <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800"
-                        alt="Growth">
-                    <div class="industry-visual-overlay">
-                        <div class="industry-visual-content">
+                        alt="Growth" class="industry-image">
+                    <div class="industry-overlay">
+                        <div class="industry-content">
+                            <div class="industry-icon">🚀</div>
                             <h3>Growth</h3>
+                            <p class="industry-description">Scale sustainably with data-driven strategies that maximize impact and market presence.</p>
+                        </div>
+                        <div class="industry-arrow">
+                            <svg fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials-section">
