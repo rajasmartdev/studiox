@@ -868,9 +868,7 @@
 
         /* Features Section */
         .features-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: white;
+            padding: 100px 40px;
             position: relative;
             overflow: hidden;
         }
@@ -878,43 +876,235 @@
         .features-section::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(0, 210, 255, 0.1) 0%, transparent 50%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            animation: pulse 8s ease-in-out infinite;
         }
 
-        .feature-box {
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+        }
+
+        .section-title {
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
             text-align: center;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 80px;
             position: relative;
-            z-index: 2;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 60px;
+            max-width: 1800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            animation: fadeInUp 1s ease-out backwards;
+            max-width: 300px;
+        }
+
+        .feature-item:nth-child(1) { animation-delay: 0.1s; }
+        .feature-item:nth-child(2) { animation-delay: 0.2s; }
+        .feature-item:nth-child(3) { animation-delay: 0.3s; }
+        .feature-item:nth-child(4) { animation-delay: 0.4s; }
+        .feature-item:nth-child(5) { animation-delay: 0.5s; }
+
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, rgba(0, 210, 255, 0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .feature-item:hover::before {
+            opacity: 1;
+        }
+
+        .feature-visual {
+            margin-bottom: 24px;
+            position: relative;
+            display: inline-block;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-item:hover .feature-visual {
+            transform: translateY(-10px) scale(1.05);
         }
 
         .feature-number {
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: 900;
-            background: linear-gradient(135deg, #00d2ff 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #00d2ff 0%, #8a2be2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 1rem;
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 0 40px rgba(0, 210, 255, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #00d2ff 0%, #8a2be2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            position: relative;
+        }
+
+        .feature-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+
+        .feature-item:hover .feature-icon::after {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.3) 0%, transparent 70%);
         }
 
         .feature-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .feature-item:hover .feature-title {
+            color: #00d2ff;
         }
 
         .feature-text {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 1rem;
             line-height: 1.7;
-            font-size: 1.05rem;
+            transition: color 0.3s ease;
         }
 
+        .feature-item:hover .feature-text {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .feature-separator {
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 80px;
+            background: linear-gradient(to bottom, transparent, rgba(0, 210, 255, 0.3), transparent);
+        }
+
+        .feature-item:last-child .feature-separator {
+            display: none;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            .features-grid {
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+
+            .feature-item {
+                max-width: 280px;
+            }
+
+            .feature-separator {
+                display: none;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 60px;
+            }
+
+            .features-grid {
+                gap: 50px;
+            }
+
+            .feature-item {
+                max-width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .features-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 60px;
+            }
+
+            .feature-item {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .feature-number {
+                font-size: 4rem;
+            }
+
+            .feature-icon {
+                font-size: 3rem;
+            }
+        }
         /* Process Section - Redesigned */
         .process-section {
             padding: 100px 0;
@@ -1927,53 +2117,52 @@
     </section> -->
 
     <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <h2 class="section-title fade-in-up" style="color: white;">Why Forward-Thinking Brands Choose Studio X AI
-            </h2>
-            <div class="row mt-5">
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box fade-in-up">
-                        <div class="feature-number">10x</div>
-                        <h3 class="feature-title">Faster Delivery</h3>
-                        <p class="feature-text">No location scouts. No weather delays. 96 hours, not months.</p>
-                    </div>
+     <section class="features-section">
+        <h2 class="section-title">Why Forward-Thinking Brands Choose Studio X AI</h2>
+        
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-visual">
+                    <div class="feature-number">10x</div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box fade-in-up">
-                        <div class="feature-number">4K</div>
-                        <h3 class="feature-title">Cinematic Quality</h3>
-                        <p class="feature-text">4K visuals, Hollywood aesthetics at startup speed</p>
-                    </div>
+                <h3 class="feature-title">Faster Delivery</h3>
+                <p class="feature-text">No location scouts. No weather delays. 96 hours, not months.</p>
+                <div class="feature-separator"></div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-visual">
+                    <div class="feature-number">∞</div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box fade-in-up">
-                        <div class="feature-number">∞</div>
-                        <h3 class="feature-title">Infinitely Scalable</h3>
-                        <p class="feature-text">One video or one hundred—we grow with your ambition</p>
-                    </div>
+                <h3 class="feature-title">Infinitely Scalable</h3>
+                <p class="feature-text">One video or one hundred—we grow with your ambition</p>
+                <div class="feature-separator"></div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-visual">
+                    <i class="fas fa-brain feature-icon"></i>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box fade-in-up">
-                        <i class="fas fa-brain" style="font-size: 3.5rem; color: #00d2ff; margin-bottom: 1rem;"></i>
-                        <h3 class="feature-title">AI Precision Meets Human Soul</h3>
-                        <p class="feature-text">Technology handles technical. Your vision drives the story.</p>
-                    </div>
+                <h3 class="feature-title">AI Precision Meets Human Soul</h3>
+                <p class="feature-text">Technology handles technical. Your vision drives the story.</p>
+                <div class="feature-separator"></div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-visual">
+                    <i class="fas fa-globe feature-icon"></i>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box fade-in-up">
-                        <i class="fas fa-globe" style="font-size: 3.5rem; color: #00d2ff; margin-bottom: 1rem;"></i>
-                        <h3 class="feature-title">Global Reach</h3>
-                        <p class="feature-text">One video, multiple languages with natural lip-sync</p>
-                    </div>
+                <h3 class="feature-title">Global Reach</h3>
+                <p class="feature-text">One video, multiple languages with natural lip-sync</p>
+                <div class="feature-separator"></div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-visual">
+                    <i class="fas fa-palette feature-icon"></i>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-box fade-in-up">
-                        <i class="fas fa-palette" style="font-size: 3.5rem; color: #00d2ff; margin-bottom: 1rem;"></i>
-                        <h3 class="feature-title">Brand Consistency</h3>
-                        <p class="feature-text">Every frame reflects your identity. Scale without diluting.</p>
-                    </div>
-                </div>
+                <h3 class="feature-title">Brand Consistency</h3>
+                <p class="feature-text">Every frame reflects your identity. Scale without diluting.</p>
             </div>
         </div>
     </section>
