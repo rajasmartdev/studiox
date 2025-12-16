@@ -1565,100 +1565,48 @@
             }
         }
 
-        /* CTA Section - Split Layout */
+        /* CTA Section - Simplified Centered Layout */
         .cta-section {
-            padding: 0;
-            background: #000;
+            padding: 80px 0;
+            background: url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center/cover;
             color: white;
+            text-align: center;
             position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: stretch;
-            min-height: 80vh;
-            /* Prominent height */
+            /* Parallax effect optional, keep simple for now */
+            background-attachment: fixed;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            /* Dark overlay for readability */
+            z-index: 1;
         }
 
         .cta-container {
-            width: 100%;
-            max-width: 1400px;
-            /* Wider container for split view */
+            max-width: 800px;
             margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .cta-content-col {
-            width: 50%;
-            padding: 6rem 5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+            padding: 0 20px;
             position: relative;
             z-index: 2;
         }
 
-        .cta-image-col {
-            width: 50%;
-            position: relative;
-            min-height: 400px;
-        }
-
-        .cta-image-col img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            filter: brightness(0.8);
-            transition: transform 0.8s ease;
-        }
-
-        .cta-section:hover .cta-image-col img {
-            transform: scale(1.05);
-            filter: brightness(1);
-        }
-
         .cta-section h2 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
-            letter-spacing: -2px;
-            line-height: 1.1;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
 
         .cta-section p {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
             opacity: 0.8;
-            max-width: 600px;
             line-height: 1.6;
-        }
-
-        @media (max-width: 992px) {
-            .cta-container {
-                flex-direction: column-reverse;
-                /* Image top, Text bottom on mobile */
-            }
-
-            .cta-content-col,
-            .cta-image-col {
-                width: 100%;
-            }
-
-            .cta-content-col {
-                padding: 4rem 2rem;
-                text-align: center;
-            }
-
-            .cta-image-col {
-                height: 50vh;
-            }
-
-            .cta-section h2 {
-                font-size: 2.5rem;
-            }
         }
 
 
@@ -2722,96 +2670,98 @@
         <div class="container">
             <h2 class="section-title fade-in-up">What We Create</h2>
             <p class="section-subtitle fade-in-up">Cinematic storytelling across every business need</p>
+            <section id="services-interactive" class="interactive-services-section" style="background: #000;">
+                <div class="interactive-services-container">
 
-            
+                    <!-- Left Column: Visual Display -->
+                    <div class="services-visual-col">
+                        <div class="service-image-display" id="serviceImageDisplay">
+                            <!-- Default Image -->
+                            <img src="https://images.pexels.com/photos/2533318/pexels-photo-2533318.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                                alt="Brand Films" id="activeServiceImage" class="active">
+                        </div>
+                    </div>
+
+                    <!-- Right Column: List -->
+                    <div class="services-list-col">
+
+                        <!-- Item 1 -->
+                        <div class="service-list-item active"
+                            onmouseover="changeServiceImage('https://images.pexels.com/photos/2533318/pexels-photo-2533318.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                            <div class="service-list-content">
+                                <span class="service-item-number">01</span>
+                                <h3 class="service-item-title">Brand Films</h3>
+                                <p class="service-item-desc">Emotionally charged storytelling that defines who you are.
+                                </p>
+                            </div>
+                            <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="service-list-item"
+                            onmouseover="changeServiceImage('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                            <div class="service-list-content">
+                                <span class="service-item-number">02</span>
+                                <h3 class="service-item-title">Product Launches</h3>
+                                <p class="service-item-desc">Crystal-clear explainers that make complexity simple.</p>
+                            </div>
+                            <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="service-list-item"
+                            onmouseover="changeServiceImage('https://images.pexels.com/photos/1181655/pexels-photo-1181655.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                            <div class="service-list-content">
+                                <span class="service-item-number">03</span>
+                                <h3 class="service-item-title">Leadership Content</h3>
+                                <p class="service-item-desc">CEO messages with gravitas and authenticity.</p>
+                            </div>
+                            <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="service-list-item"
+                            onmouseover="changeServiceImage('https://images.pexels.com/photos/5077047/pexels-photo-5077047.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                            <div class="service-list-content">
+                                <span class="service-item-number">04</span>
+                                <h3 class="service-item-title">Social Cinematics</h3>
+                                <p class="service-item-desc">Scroll-stopping content for high-impact engagement.</p>
+                            </div>
+                            <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div class="service-list-item"
+                            onmouseover="changeServiceImage('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                            <div class="service-list-content">
+                                <span class="service-item-number">05</span>
+                                <h3 class="service-item-title">Corporate Identity</h3>
+                                <p class="service-item-desc">Culture films that unite teams and inspire stakeholders.
+                                </p>
+                            </div>
+                            <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+
+                        <!-- Item 6 -->
+                        <div class="service-list-item"
+                            onmouseover="changeServiceImage('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                            <div class="service-list-content">
+                                <span class="service-item-number">06</span>
+                                <h3 class="service-item-title">Customer Stories</h3>
+                                <p class="service-item-desc">Testimonials that build trust and drive decisions.</p>
+                            </div>
+                            <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
         </div>
     </section>
 
     <!-- Modified Services Section: Interactive Hover List -->
-    <section id="services-interactive" class="interactive-services-section" style="background: #000;">
-        <div class="interactive-services-container">
 
-            <!-- Left Column: Visual Display -->
-            <div class="services-visual-col">
-                <div class="service-image-display" id="serviceImageDisplay">
-                    <!-- Default Image -->
-                    <img src="https://images.pexels.com/photos/2533318/pexels-photo-2533318.jpeg?auto=compress&cs=tinysrgb&w=1920"
-                        alt="Brand Films" id="activeServiceImage" class="active">
-                </div>
-            </div>
-
-            <!-- Right Column: List -->
-            <div class="services-list-col">
-
-                <!-- Item 1 -->
-                <div class="service-list-item active"
-                    onmouseover="changeServiceImage('https://images.pexels.com/photos/2533318/pexels-photo-2533318.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
-                    <div class="service-list-content">
-                        <span class="service-item-number">01</span>
-                        <h3 class="service-item-title">Brand Films</h3>
-                        <p class="service-item-desc">Emotionally charged storytelling that defines who you are.</p>
-                    </div>
-                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="service-list-item"
-                    onmouseover="changeServiceImage('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
-                    <div class="service-list-content">
-                        <span class="service-item-number">02</span>
-                        <h3 class="service-item-title">Product Launches</h3>
-                        <p class="service-item-desc">Crystal-clear explainers that make complexity simple.</p>
-                    </div>
-                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="service-list-item"
-                    onmouseover="changeServiceImage('https://images.pexels.com/photos/1181655/pexels-photo-1181655.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
-                    <div class="service-list-content">
-                        <span class="service-item-number">03</span>
-                        <h3 class="service-item-title">Leadership Content</h3>
-                        <p class="service-item-desc">CEO messages with gravitas and authenticity.</p>
-                    </div>
-                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="service-list-item"
-                    onmouseover="changeServiceImage('https://images.pexels.com/photos/5077047/pexels-photo-5077047.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
-                    <div class="service-list-content">
-                        <span class="service-item-number">04</span>
-                        <h3 class="service-item-title">Social Cinematics</h3>
-                        <p class="service-item-desc">Scroll-stopping content for high-impact engagement.</p>
-                    </div>
-                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-
-                <!-- Item 5 -->
-                <div class="service-list-item"
-                    onmouseover="changeServiceImage('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
-                    <div class="service-list-content">
-                        <span class="service-item-number">05</span>
-                        <h3 class="service-item-title">Corporate Identity</h3>
-                        <p class="service-item-desc">Culture films that unite teams and inspire stakeholders.</p>
-                    </div>
-                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-
-                <!-- Item 6 -->
-                <div class="service-list-item"
-                    onmouseover="changeServiceImage('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
-                    <div class="service-list-content">
-                        <span class="service-item-number">06</span>
-                        <h3 class="service-item-title">Customer Stories</h3>
-                        <p class="service-item-desc">Testimonials that build trust and drive decisions.</p>
-                    </div>
-                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
 
     <!-- Process Section -->
@@ -3001,26 +2951,17 @@
         </div>
     </section>
 
-    <!-- CTA Section - Split Layout -->
+    <!-- CTA Section - Simplified Centered Layout -->
     <section id="contact" class="cta-section">
         <div class="cta-container">
-            <div class="cta-content-col">
-                <h2 class="fade-in-up">Create Stories That Move Your Audience</h2>
-                <p class="fade-in-up">Whether building brand awareness, launching products, or educating
-                    customers—Studio X
-                    AI gives you the creative power of a full production house with AI efficiency.</p>
-                <div class="mt-4 fade-in-up">
-                    <a href="#" class="btn-primary-custom btn-lg">
-                        Start Your Project <i class="fas fa-arrow-right ms-2"></i>
-                    </a>
-                    <a href="#" class="btn-outline-custom btn-lg">
-                        <i class="fas fa-calendar-alt me-2"></i> Book Strategy Call
-                    </a>
-                </div>
-            </div>
-            <div class="cta-image-col">
-                <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1920"
-                    alt="Creative Production">
+            <h2 class="fade-in-up">Create Stories That Move Your Audience</h2>
+            <div class="mt-4 fade-in-up">
+                <a href="#" class="btn-primary-custom btn-lg me-3">
+                    Start Your Project <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+                <a href="#" class="btn-outline-custom btn-lg">
+                    <i class="fas fa-calendar-alt me-2"></i> Book Strategy Call
+                </a>
             </div>
         </div>
     </section>
