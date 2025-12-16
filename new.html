@@ -137,7 +137,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
-            opacity: 0.4;
+            /* opacity: 0.4; */
         }
 
         .hero::before {
@@ -450,7 +450,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+           
             display: flex;
             align-items: center;
             justify-content: center;
@@ -460,9 +460,7 @@
             transition: all 0.3s;
         }
 
-        .video-placeholder:hover {
-            background: linear-gradient(135deg, #00d2ff 0%, #0099cc 100%);
-        }
+        
 
         .portfolio-content {
             padding: 1.2rem;
@@ -1897,8 +1895,8 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="https://studioxai.com.au/assets/images/Studio%20X%20AI_Logo.png" alt="Studio X AI"
-                    class="logo-img">
+                <img src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/Studio%20X%20AI_Logo.png"
+                    alt="Studio X AI" class="logo-img">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -1925,11 +1923,11 @@
     <section class="hero">
         <div class="hero-video-wrapper"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden;">
-            <iframe
-                src="https://www.youtube.com/embed/1dkusHHRIpk?autoplay=1&mute=1&controls=0&loop=1&playlist=1dkusHHRIpk&playsinline=1&disablekb=1&iv_load_policy=3"
-                style="width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 0;"
-                allow="autoplay; encrypted-media" allowfullscreen>
-            </iframe>
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source
+                    src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/Melbourne%20Wedding%20Venues%20-%2035%20Sec.mp4"
+                    type="video/mp4">
+            </video>
         </div>
         <div class="container hero-content">
             <div class="row align-items-center">
@@ -2028,7 +2026,11 @@
                     <div class="col-lg-6">
                         <div class="video-wrapper">
                             <div class="video-placeholder">
-                                <i class="fas fa-play-circle"></i>
+                                <video class="hero-video" autoplay muted loop>
+                <source
+                    src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/clicnicgp.mp4"
+                    type="video/mp4">
+            </video>
                             </div>
                         </div>
                     </div>
@@ -2055,11 +2057,11 @@
                     <div class="col-lg-6 order-lg-2">
                         <div class="video-wrapper">
                             <div class="video-placeholder">
-                                <iframe
-                                    src="https://www.youtube.com/embed/msfWpTJCqmA?autoplay=1&mute=1&loop=1&playlist=msfWpTJCqmA&controls=0&showinfo=0&rel=0"
-                                    frameborder="0" width="100%" height="100%" allow="autoplay; fullscreen"
-                                    allowfullscreen>
-                                </iframe>
+                                <video class="hero-video" autoplay muted loop>
+                <source
+                    src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/ROA.mp4"
+                    type="video/mp4">
+            </video>
                             </div>
                         </div>
                     </div>
@@ -2447,7 +2449,7 @@
 
 
     <!-- Process Section -->
-    <section id="process" class="process-section">
+    <!-- <section id="process" class="process-section">
         <div class="container">
             <h2 class="section-title fade-in-up">Your 4-Day Journey</h2>
             <p class="section-subtitle fade-in-up">From vision to viral in just 96 hours</p>
@@ -2484,7 +2486,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Industries Section - Image Grid Matching Reference "Crafted for businesses" -->
     <!-- <section class="industries-section">
