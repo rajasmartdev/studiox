@@ -122,7 +122,7 @@
             background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
             color: white;
             padding: 0;
-            min-height: 100vh;
+            min-height: 90vh;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -450,7 +450,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-           
+
             display: flex;
             align-items: center;
             justify-content: center;
@@ -460,7 +460,7 @@
             transition: all 0.3s;
         }
 
-        
+
 
         .portfolio-content {
             padding: 1.2rem;
@@ -930,7 +930,7 @@
             font-size: 3rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 40px;
             position: relative;
             z-index: 1;
             animation: fadeInUp 0.8s ease-out;
@@ -1449,47 +1449,218 @@
             font-size: 1.1rem;
         }
 
-        /* CTA Section */
-        .cta-section {
-            padding: 120px 0;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-            color: white;
-            text-align: center;
+        /* Creation Grid Section - Redesign */
+        .creation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 3rem;
+        }
+
+        .creation-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 3rem;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
             overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            isolation: isolate;
         }
 
-        .cta-section::before {
+        .creation-card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+            transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+            filter: brightness(0.6);
+        }
+
+        .creation-card::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, transparent 70%);
-            animation: float 15s ease-in-out infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.8) 0%, rgba(5, 5, 5, 0.95) 100%);
+            z-index: -1;
+            transition: opacity 0.4s;
         }
 
-        .cta-content {
+        .creation-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 210, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .creation-card:hover .creation-card-bg {
+            transform: scale(1.1);
+            filter: brightness(0.8);
+        }
+
+        .creation-card:hover::after {
+            opacity: 0.8;
+        }
+
+        .creation-number {
+            font-size: 0.9rem;
+            color: #00d2ff;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            letter-spacing: 2px;
+        }
+
+        .creation-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .creation-text {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .creation-arrow {
+            margin-top: auto;
+            color: #00d2ff;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s;
+            font-size: 1.2rem;
+            padding-top: 2rem;
+        }
+
+        .creation-card:hover .creation-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 992px) {
+            .creation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .creation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .creation-card {
+                padding: 2rem;
+            }
+        }
+
+        /* CTA Section - Split Layout */
+        .cta-section {
+            padding: 0;
+            background: #000;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: stretch;
+            min-height: 80vh;
+            /* Prominent height */
+        }
+
+        .cta-container {
+            width: 100%;
+            max-width: 1400px;
+            /* Wider container for split view */
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cta-content-col {
+            width: 50%;
+            padding: 6rem 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
             position: relative;
             z-index: 2;
         }
 
+        .cta-image-col {
+            width: 50%;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .cta-image-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            filter: brightness(0.8);
+            transition: transform 0.8s ease;
+        }
+
+        .cta-section:hover .cta-image-col img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
         .cta-section h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
         }
 
         .cta-section p {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 3rem;
-            opacity: 0.95;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            opacity: 0.8;
+            max-width: 600px;
+            line-height: 1.6;
         }
+
+        @media (max-width: 992px) {
+            .cta-container {
+                flex-direction: column-reverse;
+                /* Image top, Text bottom on mobile */
+            }
+
+            .cta-content-col,
+            .cta-image-col {
+                width: 100%;
+            }
+
+            .cta-content-col {
+                padding: 4rem 2rem;
+                text-align: center;
+            }
+
+            .cta-image-col {
+                height: 50vh;
+            }
+
+            .cta-section h2 {
+                font-size: 2.5rem;
+            }
+        }
+
 
         /* Footer */
         footer {
@@ -1644,9 +1815,8 @@
         }
 
         /* Services Section */
-        /* Services Section */
         .services-section {
-            padding: 100px 0;
+            padding: 50px 0;
             background: transparent;
             /* Matches body black background */
         }
@@ -1887,6 +2057,173 @@
                 font-weight: 600;
             }
         }
+
+        /* Interactive Hover Services Section */
+        .interactive-services-container {
+            display: flex;
+            position: relative;
+            /* Ensure the section is tall enough for scrolling */
+            min-height: 100vh;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: #000;
+        }
+
+        .services-visual-col {
+            width: 50%;
+            /* Sticky container */
+            position: relative;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-image-display {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .service-image-display img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            filter: brightness(0.8);
+        }
+
+        /* Image Animation Classes */
+        .service-image-display img.active {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .service-image-display img.inactive {
+            opacity: 0;
+            transform: scale(1);
+        }
+
+        .services-list-col {
+            width: 50%;
+            background: #050505;
+            display: flex;
+            flex-direction: column;
+            /* Remove center alignment to allow natural scroll flow */
+            padding-bottom: 10vh;
+        }
+
+        .service-list-item {
+            min-height: 30vh;
+            /* Force scroll height */
+            padding: 4rem 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .service-list-item:first-child {
+            border-top: none;
+        }
+
+        .service-list-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .service-list-content {
+            flex-grow: 1;
+        }
+
+        .service-item-number {
+            font-family: monospace;
+            color: #00d2ff;
+            opacity: 0.5;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .service-item-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.4);
+            transition: all 0.3s;
+            margin: 0;
+        }
+
+        .service-list-item:hover .service-item-title,
+        .service-list-item.active .service-item-title {
+            color: white;
+            padding-left: 1rem;
+        }
+
+        .service-item-desc {
+            max-height: 0;
+            overflow: hidden;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            transition: all 0.5s ease;
+            opacity: 0;
+            margin-top: 0;
+        }
+
+        .service-list-item:hover .service-item-desc,
+        .service-list-item.active .service-item-desc {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+
+        .service-arrow {
+            color: #00d2ff;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s;
+        }
+
+        .service-list-item:hover .service-arrow,
+        .service-list-item.active .service-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 992px) {
+            .interactive-services-container {
+                flex-direction: column;
+            }
+
+            .services-visual-col {
+                width: 100%;
+                height: 40vh;
+                order: 1;
+            }
+
+            .service-image-display {
+                height: 40vh;
+                position: relative;
+            }
+
+            .services-list-col {
+                width: 100%;
+                order: 2;
+            }
+
+            .service-list-item {
+                padding: 2rem;
+            }
+
+            .service-item-title {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 
@@ -2027,10 +2364,9 @@
                         <div class="video-wrapper">
                             <div class="video-placeholder">
                                 <video class="hero-video" autoplay muted loop>
-                <source
-                    src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/clicnicgp.mp4"
-                    type="video/mp4">
-            </video>
+                                    <source src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/clicnicgp.mp4"
+                                        type="video/mp4">
+                                </video>
                             </div>
                         </div>
                     </div>
@@ -2058,10 +2394,9 @@
                         <div class="video-wrapper">
                             <div class="video-placeholder">
                                 <video class="hero-video" autoplay muted loop>
-                <source
-                    src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/ROA.mp4"
-                    type="video/mp4">
-            </video>
+                                    <source src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/ROA.mp4"
+                                        type="video/mp4">
+                                </video>
                             </div>
                         </div>
                     </div>
@@ -2388,61 +2723,158 @@
             <h2 class="section-title fade-in-up">What We Create</h2>
             <p class="section-subtitle fade-in-up">Cinematic storytelling across every business need</p>
 
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-film"></i>
-                        </div>
-                        <h3 class="service-title">Brand Films</h3>
-                        <p class="portfolio-text">Emotionally charged storytelling that defines who you are</p>
+            <div class="creation-grid">
+                <div class="creation-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="creation-card-bg"
+                        style="background-image: url('https://images.pexels.com/photos/2533318/pexels-photo-2533318.jpeg?auto=compress&cs=tinysrgb&w=800');">
                     </div>
+                    <div class="creation-number">01</div>
+                    <h3 class="creation-title">Brand Films</h3>
+                    <p class="creation-text">Emotionally charged storytelling that defines who you are. We craft
+                        narratives that resonate deeply with your audience.</p>
+                    <div class="creation-arrow"><i class="fas fa-arrow-right"></i></div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3 class="service-title">Product Launches</h3>
-                        <p class="portfolio-text">Crystal-clear explainers that make complexity simple</p>
+
+                <div class="creation-card fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="creation-card-bg"
+                        style="background-image: url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800');">
                     </div>
+                    <div class="creation-number">02</div>
+                    <h3 class="creation-title">Product Launches</h3>
+                    <p class="creation-text">Crystal-clear explainers that make complexity simple. Showcase features and
+                        benefits with precision.</p>
+                    <div class="creation-arrow"><i class="fas fa-arrow-right"></i></div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h3 class="service-title">Leadership Content</h3>
-                        <p class="portfolio-text">CEO messages with gravitas and authenticity</p>
+
+                <div class="creation-card fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="creation-card-bg"
+                        style="background-image: url('https://images.pexels.com/photos/1181655/pexels-photo-1181655.jpeg?auto=compress&cs=tinysrgb&w=800');">
                     </div>
+                    <div class="creation-number">03</div>
+                    <h3 class="creation-title">Leadership Content</h3>
+                    <p class="creation-text">CEO messages with gravitas and authenticity. Position your leadership team
+                        as industry authorities.</p>
+                    <div class="creation-arrow"><i class="fas fa-arrow-right"></i></div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="service-title">Social Cinematics</h3>
-                        <p class="portfolio-text">Scroll-stopping content for Instagram, LinkedIn, TikTok</p>
+
+                <div class="creation-card fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="creation-card-bg"
+                        style="background-image: url('https://images.pexels.com/photos/5077047/pexels-photo-5077047.jpeg?auto=compress&cs=tinysrgb&w=800');">
                     </div>
+                    <div class="creation-number">04</div>
+                    <h3 class="creation-title">Social Cinematics</h3>
+                    <p class="creation-text">Scroll-stopping content for Instagram, LinkedIn, and TikTok. High-impact
+                        visuals designed for engagement.</p>
+                    <div class="creation-arrow"><i class="fas fa-arrow-right"></i></div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h3 class="service-title">Corporate Identity</h3>
-                        <p class="portfolio-text">Culture films that unite teams and inspire stakeholders</p>
+
+                <div class="creation-card fade-in-up" style="animation-delay: 0.5s;">
+                    <div class="creation-card-bg"
+                        style="background-image: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800');">
                     </div>
+                    <div class="creation-number">05</div>
+                    <h3 class="creation-title">Corporate Identity</h3>
+                    <p class="creation-text">Culture films that unite teams and inspire stakeholders. Communicate your
+                        values with passion.</p>
+                    <div class="creation-arrow"><i class="fas fa-arrow-right"></i></div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card fade-in-up">
-                        <div class="service-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3 class="service-title">Customer Stories</h3>
-                        <p class="portfolio-text">Testimonials that build trust and drive decisions</p>
+
+                <div class="creation-card fade-in-up" style="animation-delay: 0.6s;">
+                    <div class="creation-card-bg"
+                        style="background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800');">
                     </div>
+                    <div class="creation-number">06</div>
+                    <h3 class="creation-title">Customer Stories</h3>
+                    <p class="creation-text">Testimonials that build trust and drive decisions. Authenticity that no
+                        sales pitch can match.</p>
+                    <div class="creation-arrow"><i class="fas fa-arrow-right"></i></div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modified Services Section: Interactive Hover List -->
+    <section id="services-interactive" class="interactive-services-section" style="background: #000;">
+        <div class="interactive-services-container">
+
+            <!-- Left Column: Visual Display -->
+            <div class="services-visual-col">
+                <div class="service-image-display" id="serviceImageDisplay">
+                    <!-- Default Image -->
+                    <img src="https://images.pexels.com/photos/2533318/pexels-photo-2533318.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                        alt="Brand Films" id="activeServiceImage" class="active">
+                </div>
+            </div>
+
+            <!-- Right Column: List -->
+            <div class="services-list-col">
+
+                <!-- Item 1 -->
+                <div class="service-list-item active"
+                    onmouseover="changeServiceImage('https://images.pexels.com/photos/2533318/pexels-photo-2533318.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                    <div class="service-list-content">
+                        <span class="service-item-number">01</span>
+                        <h3 class="service-item-title">Brand Films</h3>
+                        <p class="service-item-desc">Emotionally charged storytelling that defines who you are.</p>
+                    </div>
+                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="service-list-item"
+                    onmouseover="changeServiceImage('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                    <div class="service-list-content">
+                        <span class="service-item-number">02</span>
+                        <h3 class="service-item-title">Product Launches</h3>
+                        <p class="service-item-desc">Crystal-clear explainers that make complexity simple.</p>
+                    </div>
+                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="service-list-item"
+                    onmouseover="changeServiceImage('https://images.pexels.com/photos/1181655/pexels-photo-1181655.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                    <div class="service-list-content">
+                        <span class="service-item-number">03</span>
+                        <h3 class="service-item-title">Leadership Content</h3>
+                        <p class="service-item-desc">CEO messages with gravitas and authenticity.</p>
+                    </div>
+                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="service-list-item"
+                    onmouseover="changeServiceImage('https://images.pexels.com/photos/5077047/pexels-photo-5077047.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                    <div class="service-list-content">
+                        <span class="service-item-number">04</span>
+                        <h3 class="service-item-title">Social Cinematics</h3>
+                        <p class="service-item-desc">Scroll-stopping content for high-impact engagement.</p>
+                    </div>
+                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="service-list-item"
+                    onmouseover="changeServiceImage('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                    <div class="service-list-content">
+                        <span class="service-item-number">05</span>
+                        <h3 class="service-item-title">Corporate Identity</h3>
+                        <p class="service-item-desc">Culture films that unite teams and inspire stakeholders.</p>
+                    </div>
+                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="service-list-item"
+                    onmouseover="changeServiceImage('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1920', this)">
+                    <div class="service-list-content">
+                        <span class="service-item-number">06</span>
+                        <h3 class="service-item-title">Customer Stories</h3>
+                        <p class="service-item-desc">Testimonials that build trust and drive decisions.</p>
+                    </div>
+                    <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -2635,21 +3067,26 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA Section - Split Layout -->
     <section id="contact" class="cta-section">
-        <div class="container cta-content">
-            <h2 class="fade-in-up">Create Stories That Move Your Audience</h2>
-            <p class="fade-in-up">Whether building brand awareness, launching products, or educating customers—Studio X
-                AI gives you the creative power of a full production house with AI efficiency.</p>
-            <p class="fade-in-up" style="font-size: 1.5rem; font-weight: 700;">Your brand deserves to be seen. And
-                remembered.</p>
-            <div class="mt-5 fade-in-up">
-                <a href="#" class="btn-primary-custom btn-lg me-3">
-                    Start Your Project <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-                <a href="#" class="btn-outline-custom btn-lg">
-                    <i class="fas fa-calendar-alt me-2"></i> Book Strategy Call
-                </a>
+        <div class="cta-container">
+            <div class="cta-content-col">
+                <h2 class="fade-in-up">Create Stories That Move Your Audience</h2>
+                <p class="fade-in-up">Whether building brand awareness, launching products, or educating
+                    customers—Studio X
+                    AI gives you the creative power of a full production house with AI efficiency.</p>
+                <div class="mt-4 fade-in-up">
+                    <a href="#" class="btn-primary-custom btn-lg">
+                        Start Your Project <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                    <a href="#" class="btn-outline-custom btn-lg">
+                        <i class="fas fa-calendar-alt me-2"></i> Book Strategy Call
+                    </a>
+                </div>
+            </div>
+            <div class="cta-image-col">
+                <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1920"
+                    alt="Creative Production">
             </div>
         </div>
     </section>
@@ -2717,6 +3154,44 @@
                 }, 300);
             });
         });
+
+        // Interactive Services Hover Effect
+        let currentImageSrc = 'https://images.pexels.com/photos/2533318/pexels-photo-2533318.jpeg?auto=compress&cs=tinysrgb&w=1920';
+
+        function changeServiceImage(newSrc, element) {
+            // Only update if it's a new image to prevent flickering
+            if (newSrc !== currentImageSrc) {
+                const display = document.getElementById('serviceImageDisplay');
+                const activeImage = document.getElementById('activeServiceImage');
+
+                // Create new image element for cross-fade
+                const newImg = document.createElement('img');
+                newImg.src = newSrc;
+                newImg.className = 'inactive';
+                display.appendChild(newImg);
+
+                // Trigger reflow
+                void newImg.offsetWidth;
+
+                // Start transition
+                newImg.className = 'active';
+                activeImage.className = 'inactive';
+
+                // Cleanup old image after transition
+                setTimeout(() => {
+                    activeImage.remove();
+                    newImg.id = 'activeServiceImage';
+                }, 500);
+
+                currentImageSrc = newSrc;
+
+                // Update active state of list items
+                document.querySelectorAll('.service-list-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                element.classList.add('active');
+            }
+        }
     </script>
 </body>
 
